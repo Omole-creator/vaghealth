@@ -1,3 +1,3 @@
-// TODO: replace with the real Selar checkout URL the moment it's available.
-// Every CTAButton reads from this single constant, so swapping it is a one-line change.
-export const CHECKOUT_URL = "#offer";
+// Every CTAButton reads from this single constant, so the checkout link only ever
+// needs to change in one place.
+export const CHECKOUT_URL = "https://selar.com/22kmt31ud8";

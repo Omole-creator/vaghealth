@@ -29,7 +29,7 @@ test.describe("conversion essentials", () => {
       await expect(cta).toBeEnabled();
       const href = await cta.getAttribute("href");
       expect(href).toBeTruthy();
-      expect(href).toMatch(/^(#offer|https:\/\/selar\.co\/)/);
+      expect(href).toMatch(/^(#offer|https:\/\/selar\.com\/)/);
     }
   });
 

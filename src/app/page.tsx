@@ -8,6 +8,7 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { ScreenshotProof } from "@/components/ScreenshotProof";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { StickyFooterCTA } from "@/components/StickyFooterCTA";
+import { CHECKOUT_URL } from "@/lib/config";
 import {
   testimonials,
   whatsInside,
@@ -77,18 +78,27 @@ export default function Home() {
       </RevealSection>
 
       <RevealSection className="px-6 py-20">
-        <div className={prose}>
-          <h2 className="font-heading text-3xl font-bold text-charcoal">
-            It Doesn&apos;t Stay In Your Head
-          </h2>
-          <p>Once you start worrying about how you smell, it doesn&apos;t stay a private thought.</p>
-          <p>It follows you into every moment of intimacy.</p>
-          <p>You become distracted instead of present.</p>
-          <p>You think twice before getting close to someone.</p>
-          <p>You wonder if the person next to you notices what you notice.</p>
-          <p>So you wash again. You buy another product.</p>
-          <p>And when it comes back anyway, the frustration builds.</p>
-          <p>You&apos;re right back where you started, just a little more anxious than before.</p>
+        <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-2 md:items-center">
+          <SeamlessImage
+            src="/images/1224010.jpg"
+            alt="A woman checking her underwear, unsure and self-conscious"
+            width={480}
+            height={420}
+            className="order-2 mx-auto aspect-[4/3] w-full max-w-sm md:order-1"
+          />
+          <div className="order-1 space-y-4 text-lg leading-relaxed text-charcoal/90 md:order-2">
+            <h2 className="font-heading text-3xl font-bold text-charcoal">
+              It Doesn&apos;t Stay In Your Head
+            </h2>
+            <p>Once you start worrying about how you smell, it doesn&apos;t stay a private thought.</p>
+            <p>It follows you into every moment of intimacy.</p>
+            <p>You become distracted instead of present. You start checking, just to be sure.</p>
+            <p>You think twice before getting close to someone.</p>
+            <p>You wonder if the person next to you notices what you notice.</p>
+            <p>So you wash again. You buy another product.</p>
+            <p>And when it comes back anyway, the frustration builds.</p>
+            <p>You&apos;re right back where you started, just a little more anxious than before.</p>
+          </div>
         </div>
       </RevealSection>
 
@@ -489,7 +499,7 @@ export default function Home() {
           <p className="font-heading italic text-charcoal/70">Dr. Omole Kelvin</p>
         </div>
         <div className="mt-8">
-          <CTAButton href="#offer" className="mx-auto" testId="cta-button">
+          <CTAButton href={CHECKOUT_URL} className="mx-auto" testId="cta-button">
             Get Instant Access Now, ₦5,000
           </CTAButton>
         </div>
@@ -525,7 +535,7 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-8 text-center">
-          <CTAButton href="#offer" className="mx-auto" testId="cta-button">
+          <CTAButton href={CHECKOUT_URL} className="mx-auto" testId="cta-button">
             Get Instant Access Now, ₦5,000
           </CTAButton>
         </div>

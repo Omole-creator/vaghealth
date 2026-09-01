@@ -472,7 +472,7 @@ Results shared on this page are from real readers and are not typical for every 
 - 1224006.jpg: early, small, inline.
 - 1224007.jpg: the single largest non-product image, full width, at the emotional peak.
 - 1224008.jpg: urgency section only, small, once.
-- 1224010.jpg: held in reserve, not used on the page, tonally sharper than the rest of the letter, better suited to an ad creative.
+- 1224010.jpg: paired beside "It Doesn't Stay In Your Head," seamless-masked and sized down, illustrating the private checking habit the copy describes right next to it. Facebook won't approve it as raw ad creative, so it lives on the page instead, not in the ad.
 
 **Buttons, all benefit-driven, none generic:**
 1. "Show Me What's Really Going On" (soft anchor, top)

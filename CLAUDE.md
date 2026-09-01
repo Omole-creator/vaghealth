@@ -14,7 +14,7 @@ npm run build         # production build
 npm run start         # run the production build
 npm run lint          # next lint
 npm test              # runs `playwright test` (starts its own dev server via webServer config)
-npx playwright test tests/conversion.spec.ts -g "sticky footer"   # run a single test by title
+npx playwright test tests/conversion.spec.ts -g "horizontal overflow"   # run a single test by title
 npx playwright install chromium   # one-time browser install if tests fail with a missing-browser error
 ```
 

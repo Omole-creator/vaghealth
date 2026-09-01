@@ -49,7 +49,7 @@ export const testimonials = {
   },
   abena: {
     quote:
-      "I calculated what I'd spent on washes and wipes over two years once. It was almost four times what this guide cost. I wish I'd found it first.",
+      "I calculated what I'd spent on washes and wipes over five months once. It was almost 10 times what this guide cost. I wish I'd found it first.",
     name: "Abena Owusu",
     location: "Takoradi, Ghana",
   },
@@ -77,7 +77,7 @@ export const secondLayer = [
   "Page 12 names the instinctive first move nearly every woman makes, and why it quietly backfires every time.",
   "That same chapter uncovers the one mistake sitting at the very bottom of the list, the one that undoes every other fix.",
   "Page 13 lays out the “boring” routine that works better than any fancy new product.",
-  "Turn to page 14 for the 60-second checklist that tells you instantly whether it's nothing, or something more.",
+  "Turn to page 14 for the quick 'should I be worried?' checklist that tells you whether it's nothing, or something more.",
   "Page 15 explains the three real reasons a smell you thought was gone always finds its way back.",
   "On page 16, you'll find the at-home reset that calms things down within days, without buying a single new product.",
   "Page 18's decision guide instantly matches what you're noticing to what it most likely means.",
@@ -85,7 +85,7 @@ export const secondLayer = [
 ];
 
 export const foodBonus = [
-  "The food everyone recommends for vaginal health, and the part of that story you rarely hear.",
+  "The one food already sitting in most kitchens that may quietly support healthy bacteria, and how to actually pick the right one off the shelf.",
   "Everyday Nigerian meals you may already be eating that fit into a healthier overall pattern.",
   "The truth behind the popular pineapple claim, and what it can actually prove.",
   "Why hydration matters, even though it is not the whole answer on its own.",
@@ -103,7 +103,6 @@ export const offer1 = {
   ],
   totalValue: "₦15,000",
   price: "₦5,000",
-  priceNote: "Full access today. That's the price of finally understanding what's going on.",
   ctaLabel: "Yes, I Want This Guide, ₦5,000",
 };
 
@@ -112,12 +111,11 @@ export const offer2 = {
   items: [
     { label: "7 Hidden Reasons for Persistent Vaginal Odour", value: "₦15,000" },
     { label: "BONUS: The 5 Foods That Affect Vaginal Odour", value: "₦4,000" },
-    { label: "The 14-day tracker and the 60-second checklist", value: "₦2,000" },
+    { label: "The 14-day tracker and the 'should I be worried?' checklist", value: "₦2,000" },
     { label: "Private access, delivered instantly to your phone", value: "₦2,000" },
   ],
   totalValue: "₦23,000",
   price: "₦5,000",
-  priceNote: "Both guides, both bonuses. Return to it whenever you need it.",
   ctaLabel: "Yes, Give Me Both Guides, ₦5,000",
 };
 
@@ -125,7 +123,7 @@ export const faqs = [
   {
     question: "Is this written by an actual doctor?",
     answer:
-      "Yes. Dr. Omole Kelvin, drawing from real questions asked by real women, not a random blog post.",
+      "Yes. Dr. Omole Kelvin, drawing from the actual questions women ask him, not a random blog post.",
   },
   {
     question: "I've already tried two or three products. Will this be different?",
@@ -139,7 +137,7 @@ export const faqs = [
   {
     question: "Do I still need to see a doctor?",
     answer:
-      "If your symptoms are sudden, severe, or come with pain, fever, or unusual bleeding, please see a doctor. This guide helps you understand ordinary, recurring odour concerns and know when something needs medical attention. It isn't a replacement for a diagnosis.",
+      "If your symptoms are sudden, severe, or come with pain, fever, or unusual bleeding, please see a doctor.",
   },
   {
     question: "What if it just doesn't work for me?",

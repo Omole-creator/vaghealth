@@ -229,7 +229,7 @@ Turn to page 11 for the object more women forget about than you'd expect, and th
 That same page also reveals the life stage that quietly rewrites your body's chemistry, and what to do differently once it does.
 
 `[TESTIMONIAL, SCREENSHOT 1 of 3]`
-`[IMG: 1224024.jpg, real WhatsApp screenshot, framed like a phone with a soft shadow. Caption underneath: "A real message from a reader, shared with her permission." This is placement 1 of 3, keep the other two far down the page.]`
+`[IMG: 1224024.jpg, WhatsApp screenshot, framed like a phone with a soft shadow. Caption underneath: "A message from a customer, shared with her permission." This is placement 1 of 3, keep the other two far down the page.]`
 
 `[TESTIMONIAL]`
 > "Page 9 was the one that got me. I read it once and knew exactly what I'd been getting wrong for two years." by **Njeri Wachira, Nakuru, Kenya**
@@ -375,7 +375,7 @@ Products treat the smell. This guide treats the confusion behind it. If products
 Yes. Delivery goes straight to your phone. Nobody sees what you bought.
 
 **Do I still need to see a doctor?**
-If your symptoms are sudden, severe, or come with pain, fever, or unusual bleeding, please see a doctor. This guide helps you understand ordinary, recurring odour concerns and know when something needs medical attention. It isn't a replacement for a diagnosis.
+If your symptoms are sudden, severe, or come with pain, fever, or unusual bleeding, please see a doctor.
 
 **What if it just doesn't work for me?**
 Then you message me within 7 days and I refund you in full. You keep both guides either way.
@@ -385,9 +385,7 @@ Then you message me within 7 days and I refund you in full. You keep both guides
 
 ---
 
-`[NEW: one line of real urgency added before the original section, which stays as written below.]`
-
-I'm keeping this at ₦5,000 while I gather more stories like the ones on this page. Once I have enough collected, the price goes back up to ₦15,000, which is what's actually inside.
+`[REMOVED from the live page per later feedback: the price-rise urgency line that used to sit here. The P.P.P.S. near the close still carries the same idea, now referring to "more reviews" rather than "stories."]`
 
 ### What Waiting Actually Costs You
 
@@ -404,7 +402,7 @@ The real cost of guessing isn't just the money. It's the confidence you keep los
 ₦5,000 is less than you've probably already spent trying to fix this the wrong way.
 
 `[TESTIMONIAL]`
-> "I calculated what I'd spent on washes and wipes over two years once. It was almost four times what this guide cost. I wish I'd found it first." by **Abena Owusu, Takoradi, Ghana**
+> "I calculated what I'd spent on washes and wipes over five months once. It was almost 10 times what this guide cost. I wish I'd found it first." by **Abena Owusu, Takoradi, Ghana**
 
 `[IMG: 1224008.jpg, small, used once, tasteful]`
 
@@ -449,7 +447,7 @@ Results shared on this page are from real readers and are not typical for every 
 
 ## BUILD NOTES
 
-**10 written testimonials plus 3 real screenshots, 13 proof elements total, never two adjacent to each other:**
+**10 written testimonials plus 3 screenshots, 13 proof elements total, never two adjacent to each other:**
 1. Chiamaka O., Lagos, Nigeria
 2. Temitope A., Abuja, Nigeria
 3. Ngozi U., Enugu, Nigeria
@@ -470,14 +468,15 @@ Results shared on this page are from real readers and are not typical for every 
 - 1223997.png: bonus section only.
 - 1224004.jpg, 1224005.jpg: small emotional beats mid letter, never full width.
 - 1224006.jpg: early, small, inline.
-- 1224007.jpg: the single largest non-product image, full width, at the emotional peak.
+- 1224007.jpg: doubles as the hero's centerpiece image (dark, glow-lit) and the full-width emotional peak lower in the letter.
 - 1224008.jpg: urgency section only, small, once.
 - 1224010.jpg: paired beside "It Doesn't Stay In Your Head," seamless-masked and sized down, illustrating the private checking habit the copy describes right next to it. Facebook won't approve it as raw ad creative, so it lives on the page instead, not in the ad.
+- generic-products-shelf.jpg (a shelf of competitor feminine wash, not one of the original 12 assets): sits at the end of "And Here's Why Nobody Ever Told You This," banded-blurred over just the label zone so bottle shapes, caps, and colors stay visible but no brand is readable, marked with a coral X.
 
 **Buttons, all benefit-driven, none generic:**
-1. "Show Me What's Really Going On" (soft anchor, top)
-2. "Yes, Help Me Understand What's Happening" (soft anchor, mid letter)
-3. "Yes, I Want This Guide, ₦5,000" (first hard offer)
-4. "Yes, Give Me Both Guides, ₦5,000" (full stack offer)
-5. "Get Instant Access Now, ₦5,000" (close, repeated after the PS block)
-6. Sticky footer bar: "Claim Your Offer Now"
+1. "Yes, Help Me Understand What's Happening" (soft anchor, mid letter, the only remaining soft anchor since the hero's own two buttons were removed per feedback)
+2. "Yes, I Want This Guide, ₦5,000" (first hard offer)
+3. "Yes, Give Me Both Guides, ₦5,000" (full stack offer)
+4. "Get Instant Access Now, ₦5,000" (close, repeated after the PS block)
+
+There is no sticky footer bar and no legal/compliance footer on the live page; both were removed per later feedback. The guarantee section now sits on the same dark background as the hero.

@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("bridge/advertorial page", () => {
   test("reads as an article, not a sales page", async ({ page }) => {
-    await page.goto("/why-it-keeps-coming-back");
+    await page.goto("/care");
 
     await expect(
       page.getByRole("heading", { name: /what actually causes vaginal odour/i })

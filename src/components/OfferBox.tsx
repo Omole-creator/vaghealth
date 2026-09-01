@@ -19,7 +19,7 @@ export function OfferBox({
   items: OfferItem[];
   totalValue: string;
   price: string;
-  priceNote: string;
+  priceNote?: string;
   ctaLabel: string;
   id?: string;
 }) {
@@ -51,13 +51,18 @@ export function OfferBox({
       </ul>
 
       <p className="mt-6 text-charcoal/70">
-        Total value: <span className="font-heading font-bold">{totalValue}</span>
+        Total value:{" "}
+        <span className="font-heading font-bold line-through decoration-2">
+          {totalValue}
+        </span>
       </p>
 
       <p className="mt-2 font-heading text-4xl font-bold text-accent sm:text-5xl">
         {price}
       </p>
-      <p className="mt-1 text-sm text-charcoal/60">{priceNote}</p>
+      {priceNote ? (
+        <p className="mt-1 text-sm text-charcoal/60">{priceNote}</p>
+      ) : null}
 
       <CTAButton href={CHECKOUT_URL} className="mt-6 w-full">
         {ctaLabel}

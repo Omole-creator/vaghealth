@@ -22,7 +22,7 @@ test.describe("conversion essentials", () => {
 
     const ctas = page.getByTestId("cta-button");
     const count = await ctas.count();
-    expect(count).toBeGreaterThanOrEqual(5);
+    expect(count).toBeGreaterThanOrEqual(4);
 
     for (let i = 0; i < count; i++) {
       const cta = ctas.nth(i);
@@ -53,17 +53,5 @@ test.describe("conversion essentials", () => {
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth
     );
     expect(hasHorizontalOverflow).toBe(false);
-  });
-
-  test("sticky footer CTA is hidden at the top and appears after scrolling", async ({
-    page,
-  }) => {
-    await page.goto("/");
-
-    const stickyBar = page.getByTestId("sticky-footer-cta");
-    await expect(stickyBar).toBeHidden();
-
-    await page.evaluate(() => window.scrollTo(0, 600));
-    await expect(stickyBar).toBeVisible();
   });
 });

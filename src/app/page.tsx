@@ -8,7 +8,6 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { ScreenshotProof } from "@/components/ScreenshotProof";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { AvoidThis } from "@/components/AvoidThis";
-import { StickyFooterCTA } from "@/components/StickyFooterCTA";
 import { CHECKOUT_URL } from "@/lib/config";
 import {
   testimonials,
@@ -298,8 +297,8 @@ export default function Home() {
       <RevealSection className="px-6 py-6">
         <ScreenshotProof
           src="/images/1224024.jpg"
-          alt="A real WhatsApp message from a reader thanking Dr. Omole Kelvin for the guide"
-          caption="A real message from a customer, shared with her permission."
+          alt="A WhatsApp message from a customer thanking Dr. Omole Kelvin for the guide"
+          caption="A message from a customer, shared with her permission."
         />
       </RevealSection>
 
@@ -361,13 +360,13 @@ export default function Home() {
           <p>So I&apos;m including a second guide, at no extra cost.</p>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-4xl gap-10 md:grid-cols-[280px_1fr] md:items-start">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-10 md:grid-cols-[320px_1fr] md:items-start">
           <Image
             src="/images/1223997.png"
             alt="The 5 Foods That Affect Vaginal Odour, bonus book cover"
-            width={280}
-            height={373}
-            className="mx-auto w-full max-w-[220px] drop-shadow-xl"
+            width={320}
+            height={427}
+            className="mx-auto w-full max-w-[280px] drop-shadow-xl"
           />
           <div>
             <h3 className="font-heading text-2xl font-bold text-charcoal">
@@ -376,13 +375,17 @@ export default function Home() {
             <p className="mt-1 text-charcoal/70">
               What to Eat, What to Avoid, and the Diet Connection Nobody Talks About
             </p>
-            <p className="mt-4 text-charcoal/90">
-              This one cuts through the usual internet noise around diet and vaginal
-              health. It&apos;s not &ldquo;eat this fruit and everything
-              changes.&rdquo; It&apos;s not &ldquo;never touch sugar again.&rdquo; Just
-              a clear, honest look at what food may, and may not, actually have to do
-              with vaginal odour.
-            </p>
+            <div className="mt-4 space-y-3 text-charcoal/90">
+              <p>This one cuts through the usual internet noise around diet and vaginal health.</p>
+              <p>
+                It&apos;s not &ldquo;eat this fruit and everything changes.&rdquo; It&apos;s
+                not &ldquo;never touch sugar again.&rdquo;
+              </p>
+              <p>
+                Just a clear, honest look at what food may, and may not, actually have
+                to do with vaginal odour. Here&apos;s what&apos;s inside:
+              </p>
+            </div>
             <ul className="mt-6 space-y-3">
               {foodBonus.map((line) => (
                 <li key={line} className="flex gap-3 text-charcoal/90">
@@ -415,15 +418,15 @@ export default function Home() {
       <RevealSection className="px-6 py-6">
         <ScreenshotProof
           src="/images/1159158.jpg"
-          alt="A real WhatsApp message from a reader saying she wishes she found the guide sooner"
-          caption="Another real message, right beside the offer it's talking about."
+          alt="A WhatsApp message from a customer saying she wishes she'd found the guide sooner"
+          caption="Another review from a different customer."
         />
       </RevealSection>
 
-      <RevealSection className="px-6 py-12">
-        <div className={`${prose} text-center`}>
-          <h2 className="font-heading text-3xl font-bold text-charcoal">
-            The &ldquo;You Can&apos;t Lose&rdquo; Guarantee
+      <RevealSection className="bg-[#101815] px-6 py-12">
+        <div className="mx-auto max-w-2xl space-y-4 text-center text-lg leading-relaxed text-white/80">
+          <h2 className="font-heading text-3xl font-bold text-white">
+            The &ldquo;<span className="text-accent">You Can&apos;t Lose</span>&rdquo; Guarantee
           </h2>
           <p>Read both guides. Go through the checklists and the reset.</p>
           <p>
@@ -457,21 +460,15 @@ export default function Home() {
       <RevealSection className="px-6 py-12">
         <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-2 md:items-center">
           <div className="space-y-4 text-lg leading-relaxed text-charcoal/90">
-            <p className="font-heading font-bold text-charcoal">
-              I&apos;m keeping this at ₦5,000 while I gather more stories like the ones
-              on this page. Once I have enough collected, the price goes back up to
-              ₦15,000, which is what&apos;s actually inside.
-            </p>
             <h2 className="font-heading text-3xl font-bold text-charcoal">
               What Waiting Actually Costs You
             </h2>
             <p>Every week you wait is another week of wondering.</p>
-            <p>Another product you might buy that still won&apos;t explain why this keeps happening.</p>
-            <p>Another moment you hesitate to get close to someone, just in case.</p>
+            <p>Maybe you buy one more product that still won&apos;t explain why this keeps happening.</p>
+            <p>You hesitate before getting close to someone, just in case.</p>
             <p>
-              Another quiet doubt that creeps in when someone pulls away, and
-              you&apos;re left guessing whether it was you, or something you&apos;ll
-              never get the chance to fix.
+              And when someone pulls away, that same quiet doubt creeps back in. Was
+              it you? Or something you never even got the chance to fix?
             </p>
             <p>
               The real cost of guessing isn&apos;t just the money. It&apos;s the
@@ -493,8 +490,8 @@ export default function Home() {
         <TestimonialCard {...testimonials.abena} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-12 text-center">
-        <div className={`${prose} text-center`}>
+      <RevealSection className="px-6 py-12">
+        <div className={prose}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             You Don&apos;t Have To Keep Wondering
           </h2>
@@ -517,8 +514,8 @@ export default function Home() {
       <RevealSection className="px-6 py-6">
         <ScreenshotProof
           src="/images/1224023.jpg"
-          alt="A real WhatsApp message from a reader saying she no longer experiences the odour"
-          caption="A third real message, near the very end of this letter."
+          alt="A WhatsApp message from a customer saying the odour hasn't come back"
+          caption="Every day, I keep getting reviews like these."
         />
       </RevealSection>
 
@@ -538,7 +535,7 @@ export default function Home() {
             refund. There&apos;s no risk from your end.
           </p>
           <p>
-            P.P.P.S. Once I&apos;ve gathered enough stories for the next update, the
+            P.P.P.S. Once I&apos;ve gathered more reviews for the next update, the
             price goes back up to ₦15,000. If you&apos;re reading this today,
             you&apos;re still inside the ₦5,000 window.
           </p>
@@ -550,18 +547,6 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <footer className="border-t border-charcoal/10 px-6 py-6 text-center text-sm text-charcoal/50">
-        <p className="mx-auto max-w-2xl">
-          Results shared on this page are from real readers and are not typical for
-          every person, individual results vary. This guide provides general
-          education and is not a substitute for a medical diagnosis. If you have
-          severe, sudden, or persistent symptoms, please consult a licensed doctor.
-          Names and locations of testimonial contributors are shared with their
-          permission.
-        </p>
-      </footer>
-
-      <StickyFooterCTA />
     </main>
   );
 }

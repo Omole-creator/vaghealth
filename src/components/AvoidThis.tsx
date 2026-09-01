@@ -12,14 +12,33 @@ export function AvoidThis({
   return (
     <figure className="mx-auto max-w-sm">
       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
+        {/* sharp base photo, so the cap and the base of each bottle stay visible */}
         <Image
           src={src}
           alt={alt}
           fill
           sizes="(max-width: 640px) 100vw, 384px"
-          className="scale-125 object-cover blur-2xl saturate-50 brightness-95"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-charcoal/10" />
+        {/* blurred overlay, masked to a band across the label area only, hides the brand without hiding the product */}
+        <div
+          className="absolute inset-0"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, transparent 20%, black 32%, black 72%, transparent 82%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, transparent 20%, black 32%, black 72%, transparent 82%, transparent 100%)",
+          }}
+        >
+          <Image
+            src={src}
+            alt=""
+            aria-hidden
+            fill
+            sizes="(max-width: 640px) 100vw, 384px"
+            className="scale-105 object-cover blur-xl"
+          />
+        </div>
         <svg
           viewBox="0 0 100 100"
           aria-hidden

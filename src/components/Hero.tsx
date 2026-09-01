@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { CTAButton } from "./CTAButton";
-import { CHECKOUT_URL } from "@/lib/config";
 
 const container = {
   hidden: {},
@@ -70,21 +68,14 @@ export function Hero() {
         {/* top-left wordmark only, no nav links, no logo mark, no header buttons */}
         <motion.p
           variants={item}
-          className="absolute left-0 top-0 -translate-y-16 text-left font-heading text-sm font-bold uppercase tracking-[0.2em] text-white/70 sm:-translate-y-10"
+          className="text-left font-heading text-sm font-bold uppercase tracking-[0.2em] text-white/70"
         >
           Vaginal Health
         </motion.p>
 
-        <motion.span
-          variants={item}
-          className="mt-10 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent"
-        >
-          A question every woman has asked herself
-        </motion.span>
-
         <motion.h1
           variants={item}
-          className="mt-6 font-heading text-4xl font-bold leading-[1.1] sm:text-5xl md:text-6xl"
+          className="mt-8 font-heading text-4xl font-bold leading-[1.1] sm:text-5xl md:text-6xl"
         >
           Why Vaginal Odour Keeps Coming Back,{" "}
           <span className="text-accent">Even When You&apos;re Doing Everything Right</span>
@@ -97,19 +88,7 @@ export function Hero() {
 
         <motion.div
           variants={item}
-          className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
-          <CTAButton href="#letter" testId="nav-button">
-            Show Me What&apos;s Really Going On
-          </CTAButton>
-          <CTAButton href="#guide" variant="ghost" testId="nav-button">
-            See What&apos;s Inside
-          </CTAButton>
-        </motion.div>
-
-        <motion.div
-          variants={item}
-          className="relative mx-auto mt-16 w-full max-w-md"
+          className="relative mx-auto mt-10 w-full max-w-md"
         >
           <div
             aria-hidden

@@ -7,6 +7,7 @@ import { OfferBox } from "@/components/OfferBox";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { ScreenshotProof } from "@/components/ScreenshotProof";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { AvoidThis } from "@/components/AvoidThis";
 import { StickyFooterCTA } from "@/components/StickyFooterCTA";
 import { CHECKOUT_URL } from "@/lib/config";
 import {
@@ -26,7 +27,7 @@ export default function Home() {
     <main>
       <Hero />
 
-      <RevealSection id="letter" className="px-6 py-20" delay={0}>
+      <RevealSection id="letter" className="px-6 py-12" delay={0}>
         <div className={prose}>
           <p>Dear Friend,</p>
           <p>You shower every day.</p>
@@ -77,7 +78,7 @@ export default function Home() {
         />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-2 md:items-center">
           <SeamlessImage
             src="/images/1224010.jpg"
@@ -102,11 +103,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.chiamaka} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className={prose}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             Here&apos;s What&apos;s Actually True
@@ -124,7 +125,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="bg-charcoal/[0.03] px-6 py-20">
+      <RevealSection className="bg-charcoal/[0.03] px-6 py-12">
         <div className={prose}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             And Here&apos;s Why Nobody Ever Told You This
@@ -143,9 +144,17 @@ export default function Home() {
           </p>
           <p>That&apos;s not your fault. Nobody sat you down and told you the truth. So I did.</p>
         </div>
+
+        <div className="mt-10">
+          <AvoidThis
+            src="/images/generic-products-shelf.jpg"
+            alt="A shelf of feminine wash products, blurred, marked with an X"
+            caption="Another wash. Another spray. None of them ever explained anything."
+          />
+        </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className={prose}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">Why I Wrote This Guide</h2>
           <p>
@@ -165,11 +174,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.temitope} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-2 md:items-center">
           <div className="space-y-4 text-lg leading-relaxed text-charcoal/90">
             <h2 className="font-heading text-3xl font-bold text-charcoal">
@@ -202,7 +211,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className={prose}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             What Changes Once You Understand
@@ -230,7 +239,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.ngozi} />
       </RevealSection>
 
@@ -241,7 +250,7 @@ export default function Home() {
       </RevealSection>
 
       {/* PRODUCT REVEAL */}
-      <RevealSection id="guide" className="bg-charcoal/[0.03] px-6 py-20 text-center">
+      <RevealSection id="guide" className="bg-charcoal/[0.03] px-6 py-12 text-center">
         <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
           Introducing
         </p>
@@ -272,7 +281,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <h2 className="text-center font-heading text-3xl font-bold text-charcoal">
           Here&apos;s What You&apos;ll Discover Inside
         </h2>
@@ -286,19 +295,19 @@ export default function Home() {
         </ul>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <ScreenshotProof
           src="/images/1224024.jpg"
           alt="A real WhatsApp message from a reader thanking Dr. Omole Kelvin for the guide"
-          caption="A real message from a reader, shared with her permission."
+          caption="A real message from a customer, shared with her permission."
         />
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.njeri} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className={`${prose} text-center`}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             What This Is Actually Worth
@@ -314,7 +323,7 @@ export default function Home() {
         </p>
       </RevealSection>
 
-      <RevealSection className="bg-charcoal/[0.03] px-6 py-20">
+      <RevealSection className="bg-charcoal/[0.03] px-6 py-12">
         <h2 className="text-center font-heading text-3xl font-bold text-charcoal">
           And That&apos;s Just the Beginning
         </h2>
@@ -328,7 +337,7 @@ export default function Home() {
         </ul>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <SeamlessImage
           src="/images/1224005.jpg"
           alt="A woman looking down, contemplative"
@@ -338,12 +347,12 @@ export default function Home() {
         />
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.ama} />
       </RevealSection>
 
       {/* BONUS */}
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className={`${prose} text-center`}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             The Question You&apos;re Probably Also Asking
@@ -386,11 +395,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.efua} />
       </RevealSection>
 
-      <RevealSection id="offer" className="bg-charcoal/[0.03] px-6 py-20">
+      <RevealSection id="offer" className="bg-charcoal/[0.03] px-6 py-12">
         <div className="mb-10 text-center">
           <p className="text-lg text-charcoal/80">
             For ₦5,000, you get both guides delivered instantly.
@@ -403,7 +412,7 @@ export default function Home() {
         <OfferBox {...offer2} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <ScreenshotProof
           src="/images/1159158.jpg"
           alt="A real WhatsApp message from a reader saying she wishes she found the guide sooner"
@@ -411,7 +420,7 @@ export default function Home() {
         />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className={`${prose} text-center`}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             The &ldquo;You Can&apos;t Lose&rdquo; Guarantee
@@ -428,11 +437,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.blessing} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <h2 className="text-center font-heading text-3xl font-bold text-charcoal">
           A Few Honest Answers Before You Go
         </h2>
@@ -441,11 +450,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.wanjiru} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20">
+      <RevealSection className="px-6 py-12">
         <div className="mx-auto grid max-w-4xl gap-10 md:grid-cols-2 md:items-center">
           <div className="space-y-4 text-lg leading-relaxed text-charcoal/90">
             <p className="font-heading font-bold text-charcoal">
@@ -480,11 +489,11 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.abena} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-20 text-center">
+      <RevealSection className="px-6 py-12 text-center">
         <div className={`${prose} text-center`}>
           <h2 className="font-heading text-3xl font-bold text-charcoal">
             You Don&apos;t Have To Keep Wondering
@@ -505,7 +514,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <ScreenshotProof
           src="/images/1224023.jpg"
           alt="A real WhatsApp message from a reader saying she no longer experiences the odour"
@@ -513,7 +522,7 @@ export default function Home() {
         />
       </RevealSection>
 
-      <RevealSection className="px-6 py-10">
+      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.achieng} />
       </RevealSection>
 
@@ -541,7 +550,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
-      <footer className="border-t border-charcoal/10 px-6 py-10 text-center text-sm text-charcoal/50">
+      <footer className="border-t border-charcoal/10 px-6 py-6 text-center text-sm text-charcoal/50">
         <p className="mx-auto max-w-2xl">
           Results shared on this page are from real readers and are not typical for
           every person, individual results vary. This guide provides general

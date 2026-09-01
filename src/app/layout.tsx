@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://vaghealth.vercel.app"),
   title: "Why Vaginal Odour Keeps Coming Back, Even When You're Doing Everything Right",
   description:
     "The guide that finally explains what's actually causing persistent vaginal odour, and how to take control for good.",

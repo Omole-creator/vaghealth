@@ -40,6 +40,18 @@ export function AvoidThis({
             className="scale-105 object-cover blur-[18px]"
           />
         </div>
+        {/* extra patch over the leftmost bottle: the camera angle puts its label higher than the
+            others, so the vertical band above doesn't fully cover it on its own */}
+        <div className="absolute inset-0" style={{ clipPath: "inset(6% 78% 4% 0%)" }}>
+          <Image
+            src={src}
+            alt=""
+            aria-hidden
+            fill
+            sizes="(max-width: 640px) 100vw, 384px"
+            className="scale-105 object-cover blur-[18px]"
+          />
+        </div>
         <svg
           viewBox="0 0 100 100"
           aria-hidden

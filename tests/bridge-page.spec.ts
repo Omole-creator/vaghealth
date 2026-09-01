@@ -10,7 +10,7 @@ test.describe("bridge page (/care)", () => {
       page.getByRole("heading", { name: /the smell down there keeps coming back/i })
     ).toBeVisible();
 
-    await expect(page.getByAltText(/couple sitting apart/i)).toBeVisible();
+    await expect(page.getByAltText(/resting her head/i)).toBeVisible();
 
     // no purchase-intent or checkout language anywhere on the page
     const bodyText = (await page.locator("body").innerText()).toLowerCase();

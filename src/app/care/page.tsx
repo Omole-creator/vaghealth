@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Why The Smell Down There Keeps Coming Back, Even When You're Doing Everything Right",
     description:
       "Join over 1,057 women from Nigeria, Ghana, and Kenya who can't stop talking about us.",
-    images: ["/images/1224007.jpg"],
+    images: ["/images/1224004.jpg"],
     type: "website",
   },
 };
@@ -44,7 +44,7 @@ export default function Care() {
           <span className="text-accent">Even When You&apos;re Doing Everything Right</span>
         </h1>
 
-        <div className="relative mx-auto mt-8 w-full max-w-md">
+        <div className="relative mx-auto mt-8 w-full max-w-xs">
           <div
             aria-hidden
             className="absolute inset-0 -z-10 scale-110 rounded-[2.5rem] blur-2xl"
@@ -55,12 +55,12 @@ export default function Care() {
           />
           <div className="overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/30 ring-1 ring-white/10">
             <Image
-              src="/images/1224007.jpg"
-              alt="A couple sitting apart on the edge of a bed, both reacting to a smell"
-              width={640}
-              height={480}
+              src="/images/1224004.jpg"
+              alt="A woman resting her head on her arm, lost in thought"
+              width={540}
+              height={640}
               priority
-              className="h-full w-full object-cover"
+              className="h-auto w-full object-cover"
             />
           </div>
         </div>

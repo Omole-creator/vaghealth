@@ -504,8 +504,8 @@ export default function Home() {
           <p>I can&apos;t wait to hear your testimony.</p>
           <p className="font-heading italic text-charcoal/70">Dr. Omole Kelvin</p>
         </div>
-        <div className="mt-8">
-          <CTAButton href={CHECKOUT_URL} className="mx-auto" testId="cta-button">
+        <div className="mt-8 flex justify-center">
+          <CTAButton href={CHECKOUT_URL} testId="cta-button">
             Get Instant Access Now, ₦5,000
           </CTAButton>
         </div>

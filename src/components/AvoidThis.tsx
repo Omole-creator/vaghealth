@@ -20,14 +20,15 @@ export function AvoidThis({
           sizes="(max-width: 640px) 100vw, 384px"
           className="object-cover"
         />
-        {/* blurred overlay, masked to a band across the label area only, hides the brand without hiding the product */}
+        {/* blurred overlay, masked to a band across the label area only, hides the brand without hiding the product.
+            Only a thin sliver at the very top (the cap) and very bottom (the base) stays sharp. */}
         <div
           className="absolute inset-0"
           style={{
             WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, transparent 20%, black 32%, black 72%, transparent 82%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, transparent 20%, black 30%, black 90%, transparent 96%, transparent 100%)",
             maskImage:
-              "linear-gradient(to bottom, transparent 0%, transparent 20%, black 32%, black 72%, transparent 82%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, transparent 20%, black 30%, black 90%, transparent 96%, transparent 100%)",
           }}
         >
           <Image
@@ -36,7 +37,7 @@ export function AvoidThis({
             aria-hidden
             fill
             sizes="(max-width: 640px) 100vw, 384px"
-            className="scale-105 object-cover blur-xl"
+            className="scale-105 object-cover blur-[18px]"
           />
         </div>
         <svg

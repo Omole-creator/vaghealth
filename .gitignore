@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+build/
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+*.log
+.env*.local
+.DS_Store
+.claude/
+.qodo/
+sc.png

@@ -38,10 +38,10 @@ export default function Care() {
         }}
       />
 
-      <div className="relative mx-auto max-w-xl text-center">
-        <h1 className="font-heading text-3xl font-bold leading-[1.15] sm:text-4xl">
-          Why The Smell Down There Keeps Coming Back, Even When You&apos;re
-          Doing Everything Right
+      <div className="relative mx-auto max-w-xl">
+        <h1 className="text-center font-heading text-3xl font-bold leading-[1.15] sm:text-4xl">
+          Why The Smell Down There Keeps Coming Back,{" "}
+          <span className="text-accent">Even When You&apos;re Doing Everything Right</span>
         </h1>
 
         <div className="relative mx-auto mt-8 w-full max-w-md">
@@ -65,7 +65,7 @@ export default function Care() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="flex justify-center mt-8">
           <Link href="/" className={ctaClass}>
             Get The Full Details Here
           </Link>
@@ -84,7 +84,7 @@ export default function Care() {
           </p>
         </div>
 
-        <div className="mt-8">
+        <div className="flex justify-center mt-8">
           <Link href="/" className={ctaClass}>
             Get Full Details Here Now!
           </Link>

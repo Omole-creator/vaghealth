@@ -68,7 +68,7 @@ Run all three as separate ad variants against the same audience for a few days b
 | Time | Visual | Caption (on screen, carries the story muted) | Voiceover |
 |---|---|---|---|
 | 0:00–0:02 | `1224004.jpg`, fast punch-in (not a slow zoom, a quick snap-to-close-up in the first half second) | Why the smell down there keeps coming back | "Why the smell down there keeps coming back," |
-| 0:02–0:05 | `1224006.jpg`, quick hard cut, slight pan | ...even when you're doing everything right | "even when you're doing everything right." |
+| 0:02–0:05 | `1224006.jpg`, quick hard cut, slight pan | ...no matter what she tries | "no matter what she tries." |
 | 0:05–0:08 | Same frame, hold | Wash after wash. Still no answer. | "Wash after wash. Still no real answer." |
 | 0:08–0:11 | Simple dark title card, bold centered text (a genuine cut to something visually different, breaks the pattern) | Here's what nobody explains | "Here's what nobody actually explains." |
 | 0:11–0:16 | `1224003.png` book cover, zoom in on the title | Written by a doctor. An actual explanation. | "This guide, written by a doctor, finally does." |
@@ -81,6 +81,37 @@ Run all three as separate ad variants against the same audience for a few days b
 
 **Voiceover script only** (for a TTS tool or reading aloud, matches the shot list above, roughly 24-26 seconds spoken, leaving breathing room around the screenshot beats which carry themselves visually):
 
-> Why the smell down there keeps coming back, even when you're doing everything right. Wash after wash. Still no real answer. Here's what nobody actually explains. This guide, written by a doctor, finally does. Real women are already reading it. One thousand and fifty-seven of them, across three countries. The full details are one click away.
+> Why the smell down there keeps coming back, no matter what she tries. Wash after wash. Still no real answer. Here's what nobody actually explains. This guide, written by a doctor, finally does. Real women are already reading it. One thousand and fifty-seven of them, across three countries. The full details are one click away.
 
 **Why this version is actually easier to produce:** no avatar, no face, no video-generation tool needed, just the images already in this project plus a voiceover track, assembled with fast pans and hard cuts (the same pan technique used in `facebook-ad-video.mp4`, just cut tighter and varied per shot instead of one continuous drift). It sidesteps the Hugging Face/ZeroGPU dependency entirely. Say the word and it gets built, locally, no login, no waiting.
+
+---
+
+## Ad copy (Primary Text, Headline, Description)
+
+This is the text that sits around the video in Meta Ads Manager, not the video script itself. It gets scanned by automated review just as closely as the video captions, so it follows the same rule the video does: describe the situation in the third person, never assert anything about the person reading it. No "vaginal," no shame framing, no cure or guarantee language.
+
+**Primary Text:**
+
+> There's a question a lot of women type into Google, then delete before hitting search.
+>
+> Not because they don't want the answer. Because every answer they've found so far has been another product to buy, not an explanation.
+>
+> A doctor finally wrote the explanation down. Plain language. No shame. Just what's actually going on, and what to do about it.
+>
+> 1,057 women across Nigeria, Ghana, and Kenya have already read it.
+
+**Headline (three to test, Meta shows this in bold under the video):**
+1. "The Question Nobody Explains"
+2. "Why It Keeps Coming Back"
+3. "1,057 Women Found Their Answer"
+
+**Description (small supporting line under the headline):**
+> Written by a doctor. Not another wash.
+
+### Why this copy works, and where the curiosity comes from
+
+- **The open loop never closes in the ad.** "A question... then delete before hitting search" names a real, specific behavior without ever stating what the question is. That gap is what makes someone stop scrolling, they have to click to find out if it's the same question they've deleted.
+- **The villain is named without naming a body part.** "Every answer has been another product to buy, not an explanation" does the same job the sales letter's villain section does (the industry sells masking, not understanding) in one line, and it's what makes the doctor-written guide feel like the first honest thing in the space.
+- **Proof lands last, at full strength.** The 1,057 figure closes the primary text instead of opening it, so it reads as a payoff, not a boast.
+- **Every line describes women in general or the guide itself, never "you."** Same construction the video script uses, and the same reason: nothing in the primary text can be read as Meta asserting a health condition about the specific person reading it.

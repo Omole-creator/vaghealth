@@ -36,3 +36,27 @@ Format: UGC-style, one woman talking straight into her phone camera, like she's 
 - **Placements: manually deselect Audience Network** if running Advantage+ placements. Third-party network review has historically been stricter and less consistent for this category than Facebook/Instagram feed placements.
 - **"Over 1,000 women"** rounds down from the 1,057 figure already on the `/care` landing page, keep the ad and landing page numbers consistent so nothing reads as a mismatched claim on review.
 - **Expect at least one rejection on first submission.** The research is consistent on this: even fully compliant ads in this category get flagged more often than comparable ads in other niches, and approval frequently comes on appeal or on a second submission with a minor wording tweak, not the first attempt. Don't take an initial rejection as a signal something is wrong with the ad itself.
+
+---
+
+## Script 2: Voiceover-driven, no on-camera talent
+
+No person on screen at all here, this is a narrator reading over a sequence of still images (the book cover, the mood photos already used on the site, the two WhatsApp testimonial screenshots). Since there's no "her story" framing to lean on this time, every line is written in the third person, describing the guide and what other women are doing, never asserting anything about the viewer directly. That's actually the safer construction for Personal Attributes when there's no testimonial format to hide behind.
+
+| Time | Visual | Voiceover (neutral narrator, warm not clinical) | On-screen caption |
+|---|---|---|---|
+| 0:00–0:04 | `1224004.jpg`, slow zoom in | "There's a question a lot of women quietly search for, late at night, alone." | The question women Google at night |
+| 0:04–0:10 | `1224006.jpg`, slow pan | "Wash after wash. Product after product. And still, no real answer for why it keeps coming back." | Wash after wash. Still no answer. |
+| 0:10–0:17 | `1224003.png` (book cover), centered, gentle zoom | "This guide was written by a doctor to finally explain what's actually going on, in plain language, no shame attached." | Written by a doctor. An actual explanation. |
+| 0:17–0:24 | Cut between the two WhatsApp screenshots (`1224024.jpg`, `1159158.jpg`) | "Women across Nigeria, Ghana, and Kenya are already reading it, and telling their friends." | Over 1,000 women. Same story. |
+| 0:24–0:30 | Back to the book cover, CTA text animates in | "The full details are one click away." | Get The Full Details Here 👇 |
+
+**CTA button:** "Learn More" → `/care`
+
+**Voiceover script only** (for feeding straight into a TTS tool or reading aloud):
+
+> There's a question a lot of women quietly search for, late at night, alone. Wash after wash. Product after product. And still, no real answer for why it keeps coming back. This guide was written by a doctor to finally explain what's actually going on, in plain language, no shame attached. Women across Nigeria, Ghana, and Kenya are already reading it, and telling their friends. The full details are one click away.
+
+That's roughly 28 seconds read at a natural pace, the same timing budget Script 1 used.
+
+**Why this version is actually easier to produce:** it doesn't need an avatar, a face, or any video-generation tool at all, just the images already sitting in this project plus a voiceover track, assembled with slow pans (the same technique used to add motion in `facebook-ad-video.mp4`). It sidesteps the whole Hugging Face/ZeroGPU dependency entirely. If you want this one actually built into a video, say so and it can be done locally, no external service, no login, no waiting.

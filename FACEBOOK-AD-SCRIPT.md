@@ -39,24 +39,48 @@ Format: UGC-style, one woman talking straight into her phone camera, like she's 
 
 ---
 
-## Script 2: Voiceover-driven, no on-camera talent
+## Script 2: Voiceover-driven, no on-camera talent (v2, expert pass)
 
-No person on screen at all here, this is a narrator reading over a sequence of still images (the book cover, the mood photos already used on the site, the two WhatsApp testimonial screenshots). Since there's no "her story" framing to lean on this time, every line is written in the third person, describing the guide and what other women are doing, never asserting anything about the viewer directly. That's actually the safer construction for Personal Attributes when there's no testimonial format to hide behind.
+No person on screen, a narrator reads over still images: the book cover, the mood photos already on the site, and the two WhatsApp testimonial screenshots. Everything is written in the third person, describing the guide and what other women are doing, never asserting anything about the viewer directly, since there's no personal-testimonial framing here to lean on for Personal Attributes safety.
 
-| Time | Visual | Voiceover (neutral narrator, warm not clinical) | On-screen caption |
+### What changed from the first draft, and why
+
+A 30-second feed ad lives or dies in the first second, not the first three. Meta's own data puts average video ad view time on mobile feed under 2 seconds before a thumb decides to keep scrolling, so the job of 0:00–0:01 isn't to introduce anything, it's to interrupt the scroll. The first draft opened with a soft, scene-setting line ("There's a question a lot of women quietly search for"), which is a fine second line, but a weak first one. It's been moved back a beat and replaced with the sharpest line in the whole spot.
+
+**Message match.** The new hook is pulled word-for-word from the `/care` landing page headline. When the ad's opening line and the landing page headline match exactly, Meta's relevance ranking rewards it (lower cost per result) and the click-through feels like a continuation of the same thought instead of a jolt, which lowers bounce. This is the single highest-leverage change in this revision.
+
+**Cut pace.** Five shots over 30 seconds averages 6 seconds per shot, too slow to fight a scrolling thumb. This version uses nine beats, averaging just over 3 seconds each. Every beat also gets its own short, punchy caption line rather than one long sentence split awkwardly across a slow zoom.
+
+**Captions carry the ad, audio supports it.** The large majority of Meta feed video is watched muted. The caption track below isn't a transcript of the voiceover, it's the primary copy, written to work as a silent, fast-read story on its own. The voiceover is written to feel natural alongside it, not to match it line for line.
+
+**Exact numbers over rounded ones.** "1,057" reads as a real, counted number. "Over 1,000" reads as marketing. Say it naturally in the voiceover, show it precisely on screen.
+
+### Three hooks to test
+
+Run all three as separate ad variants against the same audience for a few days before picking a winner, this is standard practice, the hook is 70-80% of an ad's performance and it's never obvious in advance which one wins.
+
+1. **Message-match hook** (used in the shot list below): *"Why the smell down there keeps coming back, even when you're doing everything right."* — mirrors the landing page exactly.
+2. **Curiosity-gap hook**: *"There's one thing nobody ever explains about this."* — withholds the "what," forces a beat of attention to find out.
+3. **Social-proof hook**: *"1,057 women in Nigeria, Ghana, and Kenya are talking about the same thing."* — leads with the number instead of saving it for the middle.
+
+### Shot list
+
+| Time | Visual | Caption (on screen, carries the story muted) | Voiceover |
 |---|---|---|---|
-| 0:00–0:04 | `1224004.jpg`, slow zoom in | "There's a question a lot of women quietly search for, late at night, alone." | The question women Google at night |
-| 0:04–0:10 | `1224006.jpg`, slow pan | "Wash after wash. Product after product. And still, no real answer for why it keeps coming back." | Wash after wash. Still no answer. |
-| 0:10–0:17 | `1224003.png` (book cover), centered, gentle zoom | "This guide was written by a doctor to finally explain what's actually going on, in plain language, no shame attached." | Written by a doctor. An actual explanation. |
-| 0:17–0:24 | Cut between the two WhatsApp screenshots (`1224024.jpg`, `1159158.jpg`) | "Women across Nigeria, Ghana, and Kenya are already reading it, and telling their friends." | Over 1,000 women. Same story. |
-| 0:24–0:30 | Back to the book cover, CTA text animates in | "The full details are one click away." | Get The Full Details Here 👇 |
+| 0:00–0:02 | `1224004.jpg`, fast punch-in (not a slow zoom, a quick snap-to-close-up in the first half second) | Why the smell down there keeps coming back | "Why the smell down there keeps coming back," |
+| 0:02–0:05 | `1224006.jpg`, quick hard cut, slight pan | ...even when you're doing everything right | "even when you're doing everything right." |
+| 0:05–0:08 | Same frame, hold | Wash after wash. Still no answer. | "Wash after wash. Still no real answer." |
+| 0:08–0:11 | Simple dark title card, bold centered text (a genuine cut to something visually different, breaks the pattern) | Here's what nobody explains | "Here's what nobody actually explains." |
+| 0:11–0:16 | `1224003.png` book cover, zoom in on the title | Written by a doctor. An actual explanation. | "This guide, written by a doctor, finally does." |
+| 0:16–0:19 | `1224024.jpg` screenshot | A message from a real reader | "Real women are already reading it." |
+| 0:19–0:23 | `1159158.jpg` screenshot | Another one, right after | (pause, let the screenshot read on its own) |
+| 0:23–0:26 | Stat card: "1,057 women. Nigeria. Ghana. Kenya." on the brand's dark teal/coral background | 1,057 women. Nigeria, Ghana, Kenya. | "One thousand and fifty-seven of them, across three countries." |
+| 0:26–0:30 | Book cover again, CTA button animates in | Get The Full Details Here 👇 | "The full details are one click away." |
 
 **CTA button:** "Learn More" → `/care`
 
-**Voiceover script only** (for feeding straight into a TTS tool or reading aloud):
+**Voiceover script only** (for a TTS tool or reading aloud, matches the shot list above, roughly 24-26 seconds spoken, leaving breathing room around the screenshot beats which carry themselves visually):
 
-> There's a question a lot of women quietly search for, late at night, alone. Wash after wash. Product after product. And still, no real answer for why it keeps coming back. This guide was written by a doctor to finally explain what's actually going on, in plain language, no shame attached. Women across Nigeria, Ghana, and Kenya are already reading it, and telling their friends. The full details are one click away.
+> Why the smell down there keeps coming back, even when you're doing everything right. Wash after wash. Still no real answer. Here's what nobody actually explains. This guide, written by a doctor, finally does. Real women are already reading it. One thousand and fifty-seven of them, across three countries. The full details are one click away.
 
-That's roughly 28 seconds read at a natural pace, the same timing budget Script 1 used.
-
-**Why this version is actually easier to produce:** it doesn't need an avatar, a face, or any video-generation tool at all, just the images already sitting in this project plus a voiceover track, assembled with slow pans (the same technique used to add motion in `facebook-ad-video.mp4`). It sidesteps the whole Hugging Face/ZeroGPU dependency entirely. If you want this one actually built into a video, say so and it can be done locally, no external service, no login, no waiting.
+**Why this version is actually easier to produce:** no avatar, no face, no video-generation tool needed, just the images already in this project plus a voiceover track, assembled with fast pans and hard cuts (the same pan technique used in `facebook-ad-video.mp4`, just cut tighter and varied per shot instead of one continuous drift). It sidesteps the Hugging Face/ZeroGPU dependency entirely. Say the word and it gets built, locally, no login, no waiting.

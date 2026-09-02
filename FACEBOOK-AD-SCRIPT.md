@@ -93,11 +93,11 @@ This is the text that sits around the video in Meta Ads Manager, not the video s
 
 **Primary Text:**
 
-> There's a question a lot of women type into Google, then delete before hitting search.
+> There's a question so many women type into Google late at night, then quietly delete before they even hit search.
 >
-> Not because they don't want the answer. Because every answer they've found so far has been another product to buy, not an explanation.
+> It's not that they don't want an answer. It's that every answer they've found has been another product to buy, not an actual explanation of what's happening.
 >
-> A doctor finally wrote the explanation down. Plain language. No shame. Just what's actually going on, and what to do about it.
+> So a doctor finally sat down and wrote one, in plain language, no shame attached, just an honest explanation of what's really going on and what to do about it.
 >
 > 1,057 women across Nigeria, Ghana, and Kenya have already read it.
 

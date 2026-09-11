@@ -42,3 +42,5 @@ Playwright's `webServer` targets `http://127.0.0.1:3000`, not `localhost:3000`, 
 Book cover renders (`1224003.png`, `1223997.png`) use a plain `next/image` with a drop shadow, no mask, no frame.
 
 `public/images/` holds a copy of every asset that also exists at the repo root; the root copies are the user's original uploads, `public/images/` is what the app actually serves. Update both if an asset changes.
+
+**Facebook/Meta Pixel:** loaded site-wide in `src/app/layout.tsx` via `next/script` (`strategy="afterInteractive"`), plus the standard `noscript` fallback `<img>`. Pixel ID `2193434301489321` is inlined there (not in `src/lib/config.ts`) since it's the only Meta pixel this page uses; if that changes, extract it to a constant the way `CHECKOUT_URL` is handled.

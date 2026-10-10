@@ -10,3 +10,55 @@ body {
   background-color: #fff9f5;
   color: #252525;
 }
+
+/* Hero entrance + book float: pure CSS, so the hero paints the moment the HTML
+   arrives instead of waiting for React to hydrate. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-in {
+  animation: hero-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Scroll reveal. Sections are only hidden once the inline script in layout.tsx has
+   set data-js on <html>, so with no JS (or no IntersectionObserver) everything just
+   shows. The script marks a section data-shown as it scrolls into view. */
+[data-reveal] {
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+html[data-js] [data-reveal]:not([data-shown]) {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in,
+  .float {
+    animation: none;
+  }
+  html[data-js] [data-reveal]:not([data-shown]) {
+    opacity: 1;
+    transform: none;
+  }
+}

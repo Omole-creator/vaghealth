@@ -1,27 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
-
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.14, delayChildren: 0.1 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
+import { CTAButton } from "./CTAButton";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#101815] px-6 pb-24 pt-8 text-white">
+    <section className="relative isolate overflow-hidden bg-[#101815] px-6 pb-20 pt-6 text-white sm:pt-8">
       {/* ambient glow burst, brand teal + coral, standing in for the reference's pink glow */}
       <div
         aria-hidden
@@ -59,36 +41,34 @@ export function Hero() {
         />
       ))}
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative mx-auto max-w-3xl text-center"
-      >
+      <div className="relative mx-auto max-w-3xl text-center">
         {/* top-left wordmark only, no nav links, no logo mark, no header buttons */}
-        <motion.p
-          variants={item}
-          className="text-left font-heading text-sm font-bold uppercase tracking-[0.2em] text-white/70"
+        <p
+          className="hero-in text-left font-heading text-sm font-bold uppercase tracking-[0.2em] text-white/70"
+          style={{ animationDelay: "0s" }}
         >
           Vaginal Health
-        </motion.p>
+        </p>
 
-        <motion.h1
-          variants={item}
-          className="mt-8 font-heading text-4xl font-bold leading-[1.1] sm:text-5xl md:text-6xl"
+        <h1
+          className="hero-in mt-5 font-heading text-[2rem] font-bold leading-[1.1] sm:mt-8 sm:text-5xl md:text-6xl"
+          style={{ animationDelay: "0.05s" }}
         >
           Why Vaginal Odour Keeps Coming Back,{" "}
           <span className="text-accent">Even When You&apos;re Doing Everything Right</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p variants={item} className="mx-auto mt-6 max-w-xl text-lg text-white/70">
+        <p
+          className="hero-in mx-auto mt-4 max-w-xl text-base text-white/70 sm:mt-6 sm:text-lg"
+          style={{ animationDelay: "0.1s" }}
+        >
           Not another feminine wash or soap that only masks the smell. This is the
           framework that finally puts you back in control.
-        </motion.p>
+        </p>
 
-        <motion.div
-          variants={item}
-          className="relative mx-auto mt-10 w-full max-w-md"
+        <div
+          className="hero-in relative mx-auto mt-7 w-full max-w-md sm:mt-10"
+          style={{ animationDelay: "0.15s" }}
         >
           <div
             aria-hidden
@@ -98,22 +78,54 @@ export function Hero() {
                 "radial-gradient(ellipse at center, rgba(22,166,163,0.35), transparent 70%)",
             }}
           />
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/30 ring-1 ring-white/10"
-          >
+          {/* Same woman as the Facebook ad creative, so the click lands somewhere familiar */}
+          <div className="overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/30 ring-1 ring-white/10">
             <Image
-              src="/images/1224007.jpg"
-              alt="A couple sitting apart on the edge of a bed, both reacting to a smell, the quiet distance this letter is about"
-              width={640}
-              height={480}
+              src="/images/lady.jpg"
+              alt="A calm, confident woman relaxing on her sofa at home"
+              width={768}
+              height={512}
               priority
+              sizes="(max-width: 480px) 100vw, 448px"
               className="h-full w-full object-cover"
             />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </div>
+          {/* the product, visible on first paint */}
+          <div className="float absolute -bottom-6 -right-2 w-[34%] sm:-right-10">
+            <Image
+              src="/images/bundle-transparent.png"
+              alt="7 Hidden Reasons for Persistent Vaginal Odour, plus the bonus 5 Foods guide, by Dr. Omole Kelvin"
+              width={331}
+              height={350}
+              priority
+              sizes="(max-width: 480px) 34vw, 160px"
+              className="h-auto w-full drop-shadow-2xl"
+            />
+          </div>
+        </div>
+
+        <p
+          className="hero-in mx-auto mt-9 max-w-md text-sm text-white/70 sm:mt-12"
+          style={{ animationDelay: "0.2s" }}
+        >
+          By <span className="font-bold text-white">Dr. Omole Kelvin</span>
+          <span className="mx-2 text-white/30">·</span>
+          Over 1,000 women in Nigeria, Ghana and Kenya have read it
+        </p>
+
+        <div
+          className="hero-in mt-4"
+          style={{ animationDelay: "0.25s" }}
+        >
+          <CTAButton href="#offer" className="w-full max-w-md">
+            Get Both Guides, ₦5,000
+          </CTAButton>
+          <p className="mt-3 text-xs text-white/50">
+            Private <span className="mx-1">·</span> Instant access on your phone{" "}
+            <span className="mx-1">·</span> 7-day money-back guarantee
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

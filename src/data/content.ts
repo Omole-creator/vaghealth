@@ -1,87 +1,87 @@
 export const testimonials = {
   chiamaka: {
     quote:
-      "I got to a point where I would check my phone just to count how many hours it had been since my last shower. I stopped going out at night because I didn't trust myself anymore.",
+      "Doc I'm not even lying, I used to count how many hours since my last bath. I stopped going out at night because I no trust myself again.",
     name: "Chiamaka O.",
     location: "Lagos, Nigeria",
   },
   temitope: {
     quote:
-      "It's not that I didn't know how to wash myself. Nobody had ever explained what was actually happening in my body. Once I understood that, I stopped feeling ashamed and started actually fixing it.",
+      "It's not like I don't know how to wash myself o. Nobody ever explained what was happening in my body. Once I understood it, the shame left and I started doing the right thing.",
     name: "Temitope A.",
     location: "Abuja, Nigeria",
   },
   ngozi: {
     quote:
-      "I used to Google my symptoms at 1am and close ten different tabs, more confused than when I started. Now I actually know what I'm looking at, and I check calmly instead of panicking.",
+      "I used to google my symptoms by 1am and end up more confused. Now I actually know what I'm looking at. I check calmly, no more panic.",
     name: "Ngozi U.",
     location: "Enugu, Nigeria",
   },
   njeri: {
     quote:
-      "Page 9 was the one that got me. I read it once and knew exactly what I'd been getting wrong for two years.",
+      "Doc that part about the infection with almost no symptoms. I read it once and saw what I've been getting wrong for 2 years. Asante sana.",
     name: "Njeri Wachira",
     location: "Nakuru, Kenya",
   },
   ama: {
     quote:
-      "The 60-second checklist on page 14 is saved as a screenshot on my phone now. I check it every month without fail.",
+      "The 'should I be worried' checklist is a screenshot on my phone now. I check it every month.",
     name: "Ama Boateng",
     location: "Accra, Ghana",
   },
   efua: {
     quote:
-      "I'd been buying pineapple every week for months thinking it was the fix. The food guide showed me I was chasing the wrong thing the whole time.",
+      "Me I was buying pineapple every week for months thinking that's the fix. The food guide showed me I was chasing the wrong thing paa.",
     name: "Efua Mensah",
     location: "Kumasi, Ghana",
   },
   blessing: {
     quote:
-      "I almost didn't buy because products have let me down before. The guarantee is the only reason I gave it a chance. I didn't end up needing it, but knowing it was there made saying yes easy.",
+      "I almost didn't buy because products have disappointed me before. Na the guarantee make me try am. I never even need am, but knowing it was there made it easy.",
     name: "Blessing E.",
     location: "Port Harcourt, Nigeria",
   },
   wanjiru: {
     quote:
-      "I was too shy to ask my own doctor half these questions. Reading this felt like finally getting a straight answer without the awkward conversation.",
+      "I was too shy to ask my own doctor most of these questions. This one felt like finally getting a straight answer without the awkward conversation.",
     name: "Wanjiru Kamau",
     location: "Nairobi, Kenya",
   },
   abena: {
     quote:
-      "I calculated what I'd spent on washes and wipes over five months once. It was almost 10 times what this guide cost. I wish I'd found it first.",
+      "I sat down one day and calculated what I spent on washes and wipes in 5 months. Almost 10 times what this guide cost. I wish I found it first.",
     name: "Abena Owusu",
     location: "Takoradi, Ghana",
   },
   achieng: {
     quote:
-      "Seven weeks now without the odour coming back. That's the longest I've ever gone since it started. I've told my younger sister to read it too.",
+      "7 weeks now and the odour hasn't come back. That's the longest since it started. I've told my small sister to read it too.",
     name: "Achieng Otieno",
     location: "Mombasa, Kenya",
   },
 };
 
 export const whatsInside = [
-  "Page 4 exposes the two body parts almost every woman confuses, and why that mix-up leads to the wrong “fix” every time.",
-  "Turn to page 5 to discover the everyday bodily response that mimics infection, and the one-step trick that clears it fast.",
-  "Page 6 reveals the exact week in your cycle a normal change gets mistaken for a problem, and how to tell the two apart in seconds.",
-  "Chapter 4, page 7, names the distinct smell that's actually a specific signal, and why catching it early changes everything.",
-  "Page 8 uncovers the timing clue after intimacy that tells you whether it's nothing, or something worth acting on.",
-  "On page 9, you'll find the infection that hides with almost no symptoms, and the one sign that gives it away.",
-  "Page 10 exposes the “clean” habit secretly keeping the cycle alive, and the simple swap that finally breaks it.",
-  "Turn to page 11 for the object more women forget about than you'd expect, and the quick way to know if it's the cause.",
-  "That same page also reveals the life stage that quietly rewrites your body's chemistry, and what to do differently once it does.",
+  "The two body parts almost every woman confuses, and why that mix-up leads to the wrong “fix” every time.",
+  "The everyday bodily response that mimics infection, and the one-step trick that clears it fast.",
+  "The exact week in your cycle a normal change gets mistaken for a problem, and how to tell the two apart in seconds.",
+  "The distinct smell that's actually a specific signal, and why catching it early changes everything.",
+  "The timing clue after intimacy that tells you whether it's nothing, or something worth acting on.",
+  "The infection that hides with almost no symptoms, and the one sign that gives it away.",
+  "The “clean” habit secretly keeping the cycle alive, and the simple swap that finally breaks it.",
+  "The object more women forget about than you'd expect, and the quick way to know if it's the cause.",
+  "The life stage that quietly rewrites your body's chemistry, and what to do differently once it does.",
 ];
 
 export const secondLayer = [
-  "Page 12 names the instinctive first move nearly every woman makes, and why it quietly backfires every time.",
-  "That same chapter uncovers the one mistake sitting at the very bottom of the list, the one that undoes every other fix.",
-  "Page 13 lays out the “boring” routine that works better than any fancy new product.",
-  "Turn to page 14 for the quick 'should I be worried?' checklist that tells you whether it's nothing, or something more.",
-  "Page 15 explains the three real reasons a smell you thought was gone always finds its way back.",
-  "On page 16, you'll find the at-home reset that calms things down within days, without buying a single new product.",
-  "Page 18's decision guide instantly matches what you're noticing to what it most likely means.",
-  "The 14-day tracker on page 19 reveals your exact pattern before the two weeks are even up.",
+  "The instinctive first move nearly every woman makes, and why it quietly backfires every time.",
+  "The one mistake sitting at the very bottom of the list, the one that undoes every other fix.",
+  "The “boring” routine that works better than any fancy new product.",
+  "The quick 'should I be worried?' checklist that tells you whether it's nothing, or something more.",
+  "The three real reasons a smell you thought was gone always finds its way back.",
+  "The at-home reset that calms things down within days, without buying a single new product.",
+  "A decision guide that instantly matches what you're noticing to what it most likely means.",
+  "A 14-day tracker that reveals your exact pattern before the two weeks are even up.",
 ];
 
 export const foodBonus = [
@@ -111,10 +111,10 @@ export const offer2 = {
   items: [
     { label: "7 Hidden Reasons for Persistent Vaginal Odour", value: "₦15,000" },
     { label: "BONUS: The 5 Foods That Affect Vaginal Odour", value: "₦4,000" },
-    { label: "The 14-day tracker and the 'should I be worried?' checklist", value: "₦2,000" },
-    { label: "Private access, delivered instantly to your phone", value: "₦2,000" },
+    // Inside the main guide already, so it's listed but not priced a second time.
+    { label: "The 14-day tracker and the 'should I be worried?' checklist", value: "Included" },
   ],
-  totalValue: "₦23,000",
+  totalValue: "₦19,000",
   price: "₦5,000",
   ctaLabel: "Yes, Give Me Both Guides, ₦5,000",
 };
@@ -123,7 +123,7 @@ export const faqs = [
   {
     question: "Is this written by an actual doctor?",
     answer:
-      "Yes. Dr. Omole Kelvin, drawing from the actual questions women ask him, not a random blog post.",
+      "Yes. Dr. Omole Kelvin, drawing from the actual questions women ask her, not a random blog post.",
   },
   {
     question: "I've already tried two or three products. Will this be different?",
@@ -142,6 +142,6 @@ export const faqs = [
   {
     question: "What if it just doesn't work for me?",
     answer:
-      "Then you message me within 7 days and I refund you in full. You keep both guides either way.",
+      "Then you WhatsApp me on 0904 874 4395 within 7 days and I refund you in full. You keep both guides either way.",
   },
 ];

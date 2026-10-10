@@ -39,6 +39,12 @@ export default function Care() {
       />
 
       <div className="relative mx-auto max-w-xl">
+        {/* Picks up the ad's opening line so the click lands on the same thought.
+            Third person, same wording style the ad passed review with. */}
+        <p className="mb-5 text-center text-base text-white/70">
+          It&apos;s the question so many women type into Google late at night, then
+          quietly delete before they even hit search.
+        </p>
         <h1 className="text-center font-heading text-3xl font-bold leading-[1.15] sm:text-4xl">
           Why The Smell Down There Keeps Coming Back,{" "}
           <span className="text-accent">Even When You&apos;re Doing Everything Right</span>

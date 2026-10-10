@@ -5,10 +5,11 @@ import { SeamlessImage } from "@/components/SeamlessImage";
 import { CTAButton } from "@/components/CTAButton";
 import { OfferBox } from "@/components/OfferBox";
 import { TestimonialCard } from "@/components/TestimonialCard";
-import { ScreenshotProof } from "@/components/ScreenshotProof";
+import { ProofWall } from "@/components/ProofWall";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { AvoidThis } from "@/components/AvoidThis";
-import { CHECKOUT_URL } from "@/lib/config";
+import { StickyCTA } from "@/components/StickyCTA";
+import { CHECKOUT_URL, WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/config";
 import {
   testimonials,
   whatsInside,
@@ -27,6 +28,22 @@ export default function Home() {
       <Hero />
 
       <RevealSection id="letter" className="px-6 py-12" delay={0}>
+        {/* Echoes the ad's primary text so the click feels continuous. Third person on
+            purpose, the same construction the ad uses for Meta's health-content review. */}
+        <div className="mx-auto mb-10 max-w-2xl border-l-4 border-accent pl-5 text-lg leading-relaxed text-charcoal/80">
+          <p>
+            There&apos;s a question so many women type into Google late at night, then
+            quietly delete before they even hit search.
+          </p>
+          <p className="mt-3">
+            Not because they don&apos;t want an answer. Because every answer they&apos;ve
+            found so far has been another product to buy.
+          </p>
+          <p className="mt-3 font-heading font-bold text-charcoal">
+            This letter is the explanation that never came.
+          </p>
+        </div>
+
         <div className={prose}>
           <p>Dear Friend,</p>
           <p>You shower every day.</p>
@@ -295,14 +312,6 @@ export default function Home() {
       </RevealSection>
 
       <RevealSection className="px-6 py-6">
-        <ScreenshotProof
-          src="/images/1224024.jpg"
-          alt="A WhatsApp message from a customer thanking Dr. Omole Kelvin for the guide"
-          caption="A message from a customer, shared with her permission."
-        />
-      </RevealSection>
-
-      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.njeri} />
       </RevealSection>
 
@@ -415,12 +424,8 @@ export default function Home() {
         <OfferBox {...offer2} />
       </RevealSection>
 
-      <RevealSection className="px-6 py-6">
-        <ScreenshotProof
-          src="/images/1159158.jpg"
-          alt="A WhatsApp message from a customer saying she wishes she'd found the guide sooner"
-          caption="Another review from a different customer."
-        />
+      <RevealSection className="px-6 py-12">
+        <ProofWall />
       </RevealSection>
 
       <RevealSection className="bg-[#101815] px-6 py-12">
@@ -431,7 +436,16 @@ export default function Home() {
           <p>Read both guides. Go through the checklists and the reset.</p>
           <p>
             If you don&apos;t feel like you finally understand what&apos;s actually
-            going on, and feel more in control than you did before, send me a DM
+            going on, and feel more in control than you did before, send me a
+            WhatsApp message on{" "}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-white underline decoration-accent underline-offset-4"
+            >
+              {WHATSAPP_DISPLAY}
+            </a>{" "}
             within 7 days.
           </p>
           <p>I&apos;ll refund every naira. You don&apos;t even have to send the guides back. Keep them anyway.</p>
@@ -512,14 +526,6 @@ export default function Home() {
       </RevealSection>
 
       <RevealSection className="px-6 py-6">
-        <ScreenshotProof
-          src="/images/1224023.jpg"
-          alt="A WhatsApp message from a customer saying the odour hasn't come back"
-          caption="Every day, I keep getting reviews like these."
-        />
-      </RevealSection>
-
-      <RevealSection className="px-6 py-6">
         <TestimonialCard {...testimonials.achieng} />
       </RevealSection>
 
@@ -547,6 +553,7 @@ export default function Home() {
         </div>
       </RevealSection>
 
+      <StickyCTA />
     </main>
   );
 }

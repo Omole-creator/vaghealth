@@ -35,13 +35,40 @@ export const metadata: Metadata = {
   },
 };
 
+// Runs during HTML parse, long before the React bundle arrives. Without
+// IntersectionObserver it bails out and every section simply stays visible.
+const revealScript = `(function(){
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.setAttribute("data-js", "");
+  function start() {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.setAttribute("data-shown", "");
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -80px 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${dmSans.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: revealScript }} />
+      </head>
       <body className="font-body bg-background text-charcoal antialiased">
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
@@ -57,15 +84,14 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=2193434301489321&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
+        {/* Raw HTML on purpose: as a JSX <img>, React hoists it into a <link rel="preload">
+            in <head>, which fires a second PageView for every visitor with JS enabled. */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html:
+              '<img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2193434301489321&ev=PageView&noscript=1" />',
+          }}
+        />
         {children}
       </body>
     </html>

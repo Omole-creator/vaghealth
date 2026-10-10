@@ -19,11 +19,23 @@ WHY VAGINAL ODOUR KEEPS COMING BACK, EVEN WHEN YOU'RE DOING EVERYTHING RIGHT
 
 Not another feminine wash or soap that only masks the smell. This is the framework that finally puts you back in control.
 
-`[IMG: 1224003.png, hero image beside the headline on desktop, stacked full width under it on mobile.]`
+`[IMG: lady.png, hero image, the same woman as the Facebook ad creative so the click lands somewhere familiar. Calm and confident, the after-state, not the problem. 1224000.png (both covers) overlaps her bottom-right corner so the product is visible on first paint.]`
 
-`[BUTTON: Show Me What's Really Going On]` *(soft anchor to the letter, not the checkout, this early)*
+By Dr. Omole Kelvin · Over 1,000 women in Nigeria, Ghana and Kenya have read it
+
+`[BUTTON: Get Both Guides, ₦5,000]` *(jumps to the #offer stack, so a reader who's already convinced from the ad doesn't have to scroll the whole letter to buy)*
+
+Private · Instant access on your phone · 7-day money-back guarantee
 
 ---
+
+`[NEW: ad-match opener, echoes the Facebook ad's primary text so the click feels continuous. Kept in the third person on purpose, the same construction the ad uses to pass Meta's personal-health review. /care opens with the first line of this too, above its headline.]`
+
+There's a question so many women type into Google late at night, then quietly delete before they even hit search.
+
+Not because they don't want an answer. Because every answer they've found so far has been another product to buy.
+
+**This letter is the explanation that never came.**
 
 Dear Friend,
 
@@ -88,7 +100,7 @@ And when it comes back anyway, the frustration builds.
 You're right back where you started, just a little more anxious than before.
 
 `[TESTIMONIAL]`
-> "I got to a point where I would check my phone just to count how many hours it had been since my last shower. I stopped going out at night because I didn't trust myself anymore." by **Chiamaka O., Lagos, Nigeria**
+> "Doc I'm not even lying, I used to count how many hours since my last bath. I stopped going out at night because I no trust myself again." by **Chiamaka O., Lagos, Nigeria**
 
 ### Here's What's Actually True
 
@@ -141,7 +153,7 @@ No pretending one magic product works for every woman.
 Just a clearer way to understand what's happening, and what to do next.
 
 `[TESTIMONIAL]`
-> "It's not that I didn't know how to wash myself. Nobody had ever explained what was actually happening in my body. Once I understood that, I stopped feeling ashamed and started actually fixing it." by **Temitope A., Abuja, Nigeria**
+> "It's not like I don't know how to wash myself o. Nobody ever explained what was happening in my body. Once I understood it, the shame left and I started doing the right thing." by **Temitope A., Abuja, Nigeria**
 
 ### Where Most Women Get Stuck
 
@@ -186,7 +198,7 @@ And you spend far less time anxious about your body, and far more time simply li
 That shift starts with understanding, and that's exactly what this guide was built to give you.
 
 `[TESTIMONIAL]`
-> "I used to Google my symptoms at 1am and close ten different tabs, more confused than when I started. Now I actually know what I'm looking at, and I check calmly instead of panicking." by **Ngozi U., Enugu, Nigeria**
+> "I used to google my symptoms by 1am and end up more confused. Now I actually know what I'm looking at. I check calmly, no more panic." by **Ngozi U., Enugu, Nigeria**
 
 `[BUTTON: Yes, Help Me Understand What's Happening]`
 
@@ -210,29 +222,28 @@ And exactly what to do about each one, so you're not just naming the problem, yo
 
 ### Here's What You'll Discover Inside
 
-Page 4 exposes the two body parts almost every woman confuses, and why that mix-up leads to the wrong "fix" every time.
+`[CHANGED: page numbers removed from every bullet. Listing "page 4 ... page 19" told readers the guide is about 20 pages long right before the ₦15,000 value claim.]`
 
-Turn to page 5 to discover the everyday bodily response that mimics infection, and the one-step trick that clears it fast.
+The two body parts almost every woman confuses, and why that mix-up leads to the wrong "fix" every time.
 
-Page 6 reveals the exact week in your cycle a normal change gets mistaken for a problem, and how to tell the two apart in seconds.
+The everyday bodily response that mimics infection, and the one-step trick that clears it fast.
 
-Chapter 4, page 7, names the distinct smell that's actually a specific signal, and why catching it early changes everything.
+The exact week in your cycle a normal change gets mistaken for a problem, and how to tell the two apart in seconds.
 
-Page 8 uncovers the timing clue after intimacy that tells you whether it's nothing, or something worth acting on.
+The distinct smell that's actually a specific signal, and why catching it early changes everything.
 
-On page 9, you'll find the infection that hides with almost no symptoms, and the one sign that gives it away.
+The timing clue after intimacy that tells you whether it's nothing, or something worth acting on.
 
-Page 10 exposes the "clean" habit secretly keeping the cycle alive, and the simple swap that finally breaks it.
+The infection that hides with almost no symptoms, and the one sign that gives it away.
 
-Turn to page 11 for the object more women forget about than you'd expect, and the quick way to know if it's the cause.
+The "clean" habit secretly keeping the cycle alive, and the simple swap that finally breaks it.
 
-That same page also reveals the life stage that quietly rewrites your body's chemistry, and what to do differently once it does.
+The object more women forget about than you'd expect, and the quick way to know if it's the cause.
 
-`[TESTIMONIAL, SCREENSHOT 1 of 3]`
-`[IMG: 1224024.jpg, WhatsApp screenshot, framed like a phone with a soft shadow. Caption underneath: "A message from a customer, shared with her permission." This is placement 1 of 3, keep the other two far down the page.]`
+The life stage that quietly rewrites your body's chemistry, and what to do differently once it does.
 
 `[TESTIMONIAL]`
-> "Page 9 was the one that got me. I read it once and knew exactly what I'd been getting wrong for two years." by **Njeri Wachira, Nakuru, Kenya**
+> "Doc that part about the infection with almost no symptoms. I read it once and saw what I've been getting wrong for 2 years. Asante sana." by **Njeri Wachira, Nakuru, Kenya**
 
 ---
 
@@ -266,26 +277,26 @@ And that's not even everything you're getting inside the first guide.
 
 Beyond that first layer of understanding, it goes further into details most women never get access to.
 
-Page 12 names the instinctive first move nearly every woman makes, and why it quietly backfires every time.
+The instinctive first move nearly every woman makes, and why it quietly backfires every time.
 
-That same chapter uncovers the one mistake sitting at the very bottom of the list, the one that undoes every other fix.
+The one mistake sitting at the very bottom of the list, the one that undoes every other fix.
 
-Page 13 lays out the "boring" routine that works better than any fancy new product.
+The "boring" routine that works better than any fancy new product.
 
-Turn to page 14 for the 60-second checklist that tells you instantly whether it's nothing, or something more.
+The quick "should I be worried?" checklist that tells you whether it's nothing, or something more.
 
-Page 15 explains the three real reasons a smell you thought was gone always finds its way back.
+The three real reasons a smell you thought was gone always finds its way back.
 
-On page 16, you'll find the at-home reset that calms things down within days, without buying a single new product.
+The at-home reset that calms things down within days, without buying a single new product.
 
-Page 18's decision guide instantly matches what you're noticing to what it most likely means.
+A decision guide that instantly matches what you're noticing to what it most likely means.
 
-The 14-day tracker on page 19 reveals your exact pattern before the two weeks are even up.
+A 14-day tracker that reveals your exact pattern before the two weeks are even up.
 
 `[IMG: 1224005.jpg, small, left-aligned]`
 
 `[TESTIMONIAL]`
-> "The 60-second checklist on page 14 is saved as a screenshot on my phone now. I check it every month without fail." by **Ama Boateng, Accra, Ghana**
+> "The 'should I be worried' checklist is a screenshot on my phone now. I check it every month." by **Ama Boateng, Accra, Ghana**
 
 And once you've gone through both layers, there's still one more thing most women want to know.
 
@@ -323,15 +334,18 @@ What strong-smelling foods can, and cannot, tell you about your body.
 A simple tracker that helps you notice your own patterns, instead of cutting out foods you never needed to avoid.
 
 `[TESTIMONIAL]`
-> "I'd been buying pineapple every week for months thinking it was the fix. The food guide showed me I was chasing the wrong thing the whole time." by **Efua Mensah, Kumasi, Ghana**
+> "Me I was buying pineapple every week for months thinking that's the fix. The food guide showed me I was chasing the wrong thing paa." by **Efua Mensah, Kumasi, Ghana**
 
 For ₦5,000, you get both guides delivered instantly.
 
 `[NEW: full stack, laid out for a fast scan before the two lines below]`
 
+`[CHANGED: dropped the separately priced "private access" and "tracker + checklist" lines. The tracker and checklist are inside the main guide, so pricing them again double-counted. Total value is now an honest ₦19,000.]`
+
 - 7 Hidden Reasons for Persistent Vaginal Odour *(₦15,000 value)*
 - BONUS: The 5 Foods That Affect Vaginal Odour *(₦4,000 value)*
-- The 14-day tracker and the 60-second checklist, both included inside
+- The 14-day tracker and the "should I be worried?" checklist *(included inside)*
+- Total value: ₦19,000. Today: ₦5,000.
 
 Private access you can keep on your phone.
 
@@ -339,8 +353,7 @@ Return to it whenever you need it.
 
 `[BUTTON: Yes, Give Me Both Guides, ₦5,000]`
 
-`[TESTIMONIAL, SCREENSHOT 2 of 3]`
-`[IMG: 1159158.jpg, real WhatsApp screenshot, placed here right beside the ₦5,000 offer. High emotion, verified. Placement 2 of 3.]`
+`[PROOF WALL: all three real WhatsApp screenshots grouped together, shown large, directly under the full ₦5,000 offer stack (where the hero button lands). Heading: "Real Messages From Women Who Read It". Subline: "Unedited WhatsApp messages, shared with their permission." Swipeable row on phones, three across on desktop. Order: 1224023-cropped.jpg, 1159158.jpg, 1224024.jpg.]`
 
 ---
 
@@ -348,7 +361,7 @@ Return to it whenever you need it.
 
 Read both guides. Go through the checklists and the reset.
 
-If you don't feel like you finally understand what's actually going on, and feel more in control than you did before, send me a DM within 7 days.
+If you don't feel like you finally understand what's actually going on, and feel more in control than you did before, send me a WhatsApp message on 0904 874 4395 within 7 days.
 
 I'll refund every naira. You don't even have to send the guides back. Keep them anyway.
 
@@ -357,7 +370,7 @@ No hassles. No questions asked.
 That's how confident I am this actually changes things for you.
 
 `[TESTIMONIAL]`
-> "I almost didn't buy because products have let me down before. The guarantee is the only reason I gave it a chance. I didn't end up needing it, but knowing it was there made saying yes easy." by **Blessing E., Port Harcourt, Nigeria**
+> "I almost didn't buy because products have disappointed me before. Na the guarantee make me try am. I never even need am, but knowing it was there made it easy." by **Blessing E., Port Harcourt, Nigeria**
 
 ---
 
@@ -366,7 +379,7 @@ That's how confident I am this actually changes things for you.
 ### A Few Honest Answers Before You Go
 
 **Is this written by an actual doctor?**
-Yes. Dr. Omole Kelvin, drawing from real questions asked by real women, not a random blog post.
+Yes. Dr. Omole Kelvin, drawing from the actual questions women ask her, not a random blog post.
 
 **I've already tried two or three products. Will this be different?**
 Products treat the smell. This guide treats the confusion behind it. If products haven't worked so far, that's exactly who this was written for.
@@ -378,10 +391,10 @@ Yes. Delivery goes straight to your phone. Nobody sees what you bought.
 If your symptoms are sudden, severe, or come with pain, fever, or unusual bleeding, please see a doctor.
 
 **What if it just doesn't work for me?**
-Then you message me within 7 days and I refund you in full. You keep both guides either way.
+Then you WhatsApp me on 0904 874 4395 within 7 days and I refund you in full. You keep both guides either way.
 
 `[TESTIMONIAL]`
-> "I was too shy to ask my own doctor half these questions. Reading this felt like finally getting a straight answer without the awkward conversation." by **Wanjiru Kamau, Nairobi, Kenya**
+> "I was too shy to ask my own doctor most of these questions. This one felt like finally getting a straight answer without the awkward conversation." by **Wanjiru Kamau, Nairobi, Kenya**
 
 ---
 
@@ -402,7 +415,7 @@ The real cost of guessing isn't just the money. It's the confidence you keep los
 ₦5,000 is less than you've probably already spent trying to fix this the wrong way.
 
 `[TESTIMONIAL]`
-> "I calculated what I'd spent on washes and wipes over five months once. It was almost 10 times what this guide cost. I wish I'd found it first." by **Abena Owusu, Takoradi, Ghana**
+> "I sat down one day and calculated what I spent on washes and wipes in 5 months. Almost 10 times what this guide cost. I wish I found it first." by **Abena Owusu, Takoradi, Ghana**
 
 `[IMG: 1224008.jpg, small, used once, tasteful]`
 
@@ -422,11 +435,8 @@ I can't wait to hear your testimony.
 
 `[BUTTON: Get Instant Access Now, ₦5,000]`
 
-`[TESTIMONIAL, SCREENSHOT 3 of 3]`
-`[IMG: 1224023.jpg, real WhatsApp screenshot, its own section at the close, well separated from screenshots 1 and 2 by several full sections. Placement 3 of 3.]`
-
 `[TESTIMONIAL]`
-> "Seven weeks now without the odour coming back. That's the longest I've ever gone since it started. I've told my younger sister to read it too." by **Achieng Otieno, Mombasa, Kenya**
+> "7 weeks now and the odour hasn't come back. That's the longest since it started. I've told my small sister to read it too." by **Achieng Otieno, Mombasa, Kenya**
 
 P.S. You could keep guessing and buying products that only mask it for a week. Or you could finally know what's going on, for ₦5,000. Get instant access now.
 
@@ -447,36 +457,39 @@ Results shared on this page are from real readers and are not typical for every 
 
 ## BUILD NOTES
 
-**10 written testimonials plus 3 screenshots, 13 proof elements total, never two adjacent to each other:**
+`[PLACEHOLDER: the 10 written testimonial quotes are reworded to sound like how real customers actually message (casual, light pidgin/local phrasing, no page numbers). They are stand-ins until the owner swaps in each customer's actual words.]`
+
+**10 written testimonials plus 3 screenshots, 13 proof elements total. The written ones are never adjacent to each other; the 3 screenshots now sit together in one proof wall under the full offer stack (changed after the CRO audit: grouped and large reads as a pile of real evidence, scattered and small read as decoration):**
 1. Chiamaka O., Lagos, Nigeria
 2. Temitope A., Abuja, Nigeria
 3. Ngozi U., Enugu, Nigeria
-4. Screenshot, 1224024.jpg (placement 1 of 3, roughly a third down the page)
 5. Njeri Wachira, Nakuru, Kenya
 6. Ama Boateng, Accra, Ghana
 7. Efua Mensah, Kumasi, Ghana
-8. Screenshot, 1159158.jpg (placement 2 of 3, beside the full offer stack)
+8. Proof wall: 1224023-cropped.jpg, 1159158.jpg, 1224024.jpg (under the full offer stack)
 9. Blessing E., Port Harcourt, Nigeria
 10. Wanjiru Kamau, Nairobi, Kenya
 11. Abena Owusu, Takoradi, Ghana
-12. Screenshot, 1224023.jpg (placement 3 of 3, at the close)
 13. Achieng Otieno, Mombasa, Kenya
 
 **Image usage map (unchanged from prior pass):**
-- 1224000.png (both covers together): Open Graph / social share image only.
 - 1224003.png: hero section and product reveal section.
 - 1223997.png: bonus section only.
 - 1224004.jpg, 1224005.jpg: small emotional beats mid letter, never full width.
 - 1224006.jpg: early, small, inline.
-- 1224007.jpg: doubles as the hero's centerpiece image (dark, glow-lit) and the full-width emotional peak lower in the letter.
+- 1224007.jpg: the full-width emotional peak in the letter only. Removed from the hero, where a man pinching his nose was the reader's worst fear served as the first impression.
+- lady.png: hero centerpiece (matches the Facebook ad creative).
+- 1224000.png (both covers): Open Graph image, and the small overlapping product shot in the hero.
 - 1224008.jpg: urgency section only, small, once.
 - 1224010.jpg: paired beside "It Doesn't Stay In Your Head," seamless-masked and sized down, illustrating the private checking habit the copy describes right next to it. Facebook won't approve it as raw ad creative, so it lives on the page instead, not in the ad.
+- 1224023-cropped.jpg: 1224023.jpg with the WhatsApp contact header cropped off (the partly redacted number there shares its first digits with the public refund number).
 - generic-products-shelf.jpg (a shelf of competitor feminine wash, not one of the original 12 assets): sits at the end of "And Here's Why Nobody Ever Told You This," banded-blurred over just the label zone so bottle shapes, caps, and colors stay visible but no brand is readable, marked with a coral X.
 
 **Buttons, all benefit-driven, none generic:**
-1. "Yes, Help Me Understand What's Happening" (soft anchor, mid letter, the only remaining soft anchor since the hero's own two buttons were removed per feedback)
+0. "Get Both Guides, ₦5,000" (hero, jumps to #offer) and the same label on the sticky bar (straight to checkout)
+1. "Yes, Help Me Understand What's Happening" (soft anchor, mid letter)
 2. "Yes, I Want This Guide, ₦5,000" (first hard offer)
 3. "Yes, Give Me Both Guides, ₦5,000" (full stack offer)
 4. "Get Instant Access Now, ₦5,000" (close, repeated after the PS block)
 
-There is no sticky footer bar and no legal/compliance footer on the live page; both were removed per later feedback. The guarantee section now sits on the same dark background as the hero.
+A sticky "Get Both Guides, ₦5,000" bar is back (added after the CRO audit): it slides up from the bottom once the reader scrolls past the hero, and links straight to checkout. The hero also carries a hard CTA to #offer again. There is still no legal/compliance footer on the live page. The guarantee section now sits on the same dark background as the hero.

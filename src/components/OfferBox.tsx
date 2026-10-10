@@ -43,7 +43,14 @@ export function OfferBox({
               <span className="mt-1 text-primary">&#10003;</span>
               <span>{item.label}</span>
             </span>
-            <span className="whitespace-nowrap text-charcoal/50 line-through">
+            {/* Only naira amounts are struck through; "Included" items read as a plus, not a discount. */}
+            <span
+              className={`whitespace-nowrap ${
+                item.value.startsWith("₦")
+                  ? "text-charcoal/50 line-through"
+                  : "font-heading text-sm font-bold text-primary"
+              }`}
+            >
               {item.value}
             </span>
           </li>

@@ -1,8 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+// Server-rendered and visible by default. The fade/slide-up is driven by the tiny
+// inline script in layout.tsx (no React, no animation library), so a slow phone
+// never scrolls into blank space while the JS bundle is still downloading.
 export function RevealSection({
   children,
   className = "",
@@ -15,15 +15,13 @@ export function RevealSection({
   id?: string;
 }) {
   return (
-    <motion.section
+    <section
       id={id}
+      data-reveal=""
       className={className}
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}
-    </motion.section>
+    </section>
   );
 }

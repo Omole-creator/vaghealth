@@ -3,13 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState, type FormEvent } from "react";
 import { CAR_DELIVERY_PROMISE, CAR_ORDER_WHATSAPP } from "@/lib/config";
-import {
-  deliveryTimes,
-  naira,
-  nigerianStates,
-  packages,
-  type PackageId,
-} from "@/data/car";
+import { deliveryTimes, naira, nigerianStates, packages, type PackageId } from "@/data/car";
 
 export const PICK_EVENT = "duskway:pick";
 
@@ -19,12 +13,8 @@ type Fields = {
   phone2: string;
   email: string;
   address: string;
-  city: string;
   state: string;
-  landmark: string;
-  car: string;
   time: string;
-  note: string;
   confirm: boolean;
 };
 
@@ -34,12 +24,8 @@ const empty: Fields = {
   phone2: "",
   email: "",
   address: "",
-  city: "",
   state: "",
-  landmark: "",
-  car: "",
   time: deliveryTimes[0],
-  note: "",
   confirm: false,
 };
 
@@ -60,12 +46,8 @@ export function buildOrderMessage(pkgId: PackageId, f: Fields) {
     line("Other phone number", f.phone2),
     line("Email", f.email),
     line("Delivery address", f.address),
-    line("Town / area", f.city),
     line("State", f.state),
-    line("Nearest landmark", f.landmark),
-    line("Car (for fit check)", f.car),
     line("Best time to deliver", f.time),
-    line("Note", f.note),
     line("Payment", "Pay on delivery"),
     line("Delivery", "FREE"),
   ].join("\n\n");
@@ -75,14 +57,13 @@ type Errors = Partial<Record<keyof Fields, string>>;
 
 function validate(f: Fields): Errors {
   const e: Errors = {};
-  if (f.name.trim().split(/\s+/).length < 2) e.name = "Please enter your first and last name.";
+  if (f.name.trim().split(/\s+/).length < 2) e.name = "Please enter your first name and surname.";
   if (!NG_PHONE.test(cleanPhone(f.whatsapp))) e.whatsapp = "Enter a valid Nigerian number, like 0803 123 4567.";
   if (f.phone2.trim() && !NG_PHONE.test(cleanPhone(f.phone2))) e.phone2 = "This number doesn't look right.";
   if (!EMAIL.test(f.email.trim())) e.email = "Please enter a valid email address.";
   if (f.address.trim().length < 6) e.address = "Please enter your full delivery address.";
-  if (!f.city.trim()) e.city = "Please enter your town or area.";
   if (!f.state) e.state = "Please choose your state.";
-  if (!f.confirm) e.confirm = "Please tick this box so we know you'll be available.";
+  if (!f.confirm) e.confirm = "Please tick this box so we know you'll be around.";
   return e;
 }
 
@@ -172,7 +153,7 @@ export function OrderForm() {
     <form onSubmit={onSubmit} noValidate data-testid="order-form" className="space-y-6">
       {/* Package: adapted from 21st.dev "Choice Cards" (@felipemenezes098), as native radios */}
       <fieldset>
-        <legend className="text-sm font-semibold text-dw-ink">1. Choose your package</legend>
+        <legend className="text-sm font-semibold text-dw-ink">Choose your package</legend>
         <div className="mt-2 grid gap-3">
           {packages.map((p) => {
             const active = p.id === pkg;
@@ -200,22 +181,19 @@ export function OrderForm() {
                 >
                   {active && <span className="h-2 w-2 rounded-full bg-white" />}
                 </span>
-                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-dw-paper">
-                  <Image src="/images/car/car9.webp" alt="" fill sizes="56px" className="object-contain p-1" />
+                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-dw-paper">
+                  <Image src="/images/car/car9.webp" alt="" fill sizes="48px" className="object-contain p-1" />
                   <span className="absolute bottom-0.5 right-0.5 rounded-md bg-dw-ink px-1 text-[10px] font-bold text-white">
                     ×{p.visors}
                   </span>
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span className="font-bold">{p.title}</span>
-                    {p.tag && (
-                      <span className="rounded-full bg-dw-amber px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-dw-ink">
-                        {p.tag}
-                      </span>
-                    )}
-                  </span>
-                  <span className="mt-0.5 block text-xs leading-snug text-dw-ink/60">{p.note}</span>
+                <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
+                  <span className="font-bold">{p.title}</span>
+                  {p.tag && (
+                    <span className="rounded-full bg-dw-amber px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-dw-ink">
+                      {p.tag}
+                    </span>
+                  )}
                 </span>
                 <span className="shrink-0 text-right">
                   <span className="block text-lg font-extrabold tabular-nums">{naira(p.price)}</span>
@@ -228,7 +206,7 @@ export function OrderForm() {
       </fieldset>
 
       <fieldset className="space-y-4">
-        <legend className="mb-1 text-sm font-semibold text-dw-ink">2. Your details</legend>
+        <legend className="mb-1 text-sm font-semibold text-dw-ink">Your details</legend>
         <Field label="Full name" name="name" error={errors.name}>
           <input {...a11y("name")} autoComplete="name" className={input} value={f.name} onChange={(e) => set("name", e.target.value)} placeholder="e.g. Chinedu Okafor" />
         </Field>
@@ -243,17 +221,10 @@ export function OrderForm() {
         <Field label="Email" name="email" error={errors.email}>
           <input {...a11y("email")} type="email" inputMode="email" autoComplete="email" className={input} value={f.email} onChange={(e) => set("email", e.target.value)} placeholder="you@example.com" />
         </Field>
-      </fieldset>
-
-      <fieldset className="space-y-4">
-        <legend className="mb-1 text-sm font-semibold text-dw-ink">3. Where should we deliver?</legend>
         <Field label="Delivery address" name="address" error={errors.address}>
-          <input {...a11y("address")} autoComplete="street-address" className={input} value={f.address} onChange={(e) => set("address", e.target.value)} placeholder="House number and street" />
+          <input {...a11y("address")} autoComplete="street-address" className={input} value={f.address} onChange={(e) => set("address", e.target.value)} placeholder="House number, street and area" />
         </Field>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Town / area" name="city" error={errors.city}>
-            <input {...a11y("city")} autoComplete="address-level2" className={input} value={f.city} onChange={(e) => set("city", e.target.value)} placeholder="e.g. Ikeja" />
-          </Field>
           <Field label="State" name="state" error={errors.state}>
             <select {...a11y("state")} className={input} value={f.state} onChange={(e) => set("state", e.target.value)}>
               <option value="">Choose your state</option>
@@ -261,14 +232,6 @@ export function OrderForm() {
                 <option key={s}>{s}</option>
               ))}
             </select>
-          </Field>
-        </div>
-        <Field label="Nearest landmark" name="landmark" optional>
-          <input {...a11y("landmark")} className={input} value={f.landmark} onChange={(e) => set("landmark", e.target.value)} placeholder="e.g. Opposite First Bank" />
-        </Field>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Your car" name="car" optional hint="Make, model and year. We'll check the fit before we send it.">
-            <input {...a11y("car")} className={input} value={f.car} onChange={(e) => set("car", e.target.value)} placeholder="e.g. Toyota Corolla 2012" />
           </Field>
           <Field label="Best time to deliver" name="time">
             <select {...a11y("time")} className={input} value={f.time} onChange={(e) => set("time", e.target.value)}>
@@ -278,9 +241,6 @@ export function OrderForm() {
             </select>
           </Field>
         </div>
-        <Field label="Anything else we should know?" name="note" optional>
-          <textarea {...a11y("note")} rows={2} className={input} value={f.note} onChange={(e) => set("note", e.target.value)} />
-        </Field>
       </fieldset>
 
       <div className="rounded-2xl border border-dw-blue/25 bg-dw-blue/5 p-4">
@@ -326,9 +286,7 @@ export function OrderForm() {
         </svg>
         {sent ? "Opening WhatsApp…" : "Send My Order On WhatsApp"}
       </button>
-      <p className="text-center text-xs text-dw-ink/55">
-        WhatsApp opens with your order already typed out. Just press send.
-      </p>
+      <p className="text-center text-xs text-dw-ink/55">WhatsApp opens with your order already typed out. Just press send.</p>
     </form>
   );
 }

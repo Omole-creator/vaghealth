@@ -3,16 +3,22 @@ import { test, expect } from "@playwright/test";
 test.describe("/car (DUSKWAY visor)", () => {
   test("headline, demo, offer and form are visible", async ({ page }) => {
     await page.goto("/car");
-    await expect(page.getByRole("heading", { level: 1, name: /sun visor was never built/i })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1, name: /three seconds after oncoming full light/i })).toBeVisible();
     await expect(page.getByRole("button", { name: /flip lens/i })).toBeVisible();
     await expect(page.getByTestId("pick-2")).toBeVisible();
     await expect(page.getByTestId("order-form")).toBeVisible();
   });
 
+  test("the hero never shows a price", async ({ page }) => {
+    await page.goto("/car");
+    await expect(page.locator("header").first()).not.toContainText("₦");
+  });
+
   test("every order CTA points at the in-page form", async ({ page }) => {
     await page.goto("/car");
     const ctas = page.getByTestId("car-cta");
-    expect(await ctas.count()).toBeGreaterThanOrEqual(3);
+    // Hero + close. The bundle cards' "Choose" buttons (pick-*) also lead to #order.
+    expect(await ctas.count()).toBeGreaterThanOrEqual(2);
     for (const href of await ctas.evaluateAll((els) => els.map((e) => e.getAttribute("href")))) {
       expect(href).toBe("#order");
     }
@@ -44,10 +50,8 @@ test.describe("/car (DUSKWAY visor)", () => {
     await page.locator("#name").fill("Chinedu Okafor");
     await page.locator("#whatsapp").fill("0803 123 4567");
     await page.locator("#email").fill("chinedu@example.com");
-    await page.locator("#address").fill("12 Allen Avenue");
-    await page.locator("#city").fill("Ikeja");
+    await page.locator("#address").fill("12 Allen Avenue, Ikeja");
     await page.locator("#state").selectOption("Lagos");
-    await page.locator("#car").fill("Toyota Corolla 2012");
     await page.locator("#confirm").check();
     await page.getByTestId("order-submit").click();
 
@@ -59,9 +63,9 @@ test.describe("/car (DUSKWAY visor)", () => {
       "Full name:* Chinedu Okafor",
       "WhatsApp number:* 0803 123 4567",
       "Email:* chinedu@example.com",
-      "Delivery address:* 12 Allen Avenue",
+      "Delivery address:* 12 Allen Avenue, Ikeja",
       "State:* Lagos",
-      "Car (for fit check):* Toyota Corolla 2012",
+      "Best time to deliver:* Any time",
       "Payment:* Pay on delivery",
       "Delivery:* FREE",
     ];

@@ -6,16 +6,17 @@ import { GlareScene, type Mode } from "./GlareScene";
 // The hero "demo video": a looping, drawn demonstration instead of a hosted clip.
 // Day glare -> grey lens drops -> night headlights -> amber lens drops -> repeat.
 // Tapping Day / Night or the lens switch hands control to the visitor and stops the loop.
+// Night first: the page sells against full light at night; the day lens is the bonus.
 const TIMELINE: { mode: Mode; lensOn: boolean; ms: number }[] = [
+  { mode: "night", lensOn: false, ms: 1800 },
+  { mode: "night", lensOn: true, ms: 2800 },
   { mode: "day", lensOn: false, ms: 1600 },
   { mode: "day", lensOn: true, ms: 2600 },
-  { mode: "night", lensOn: false, ms: 1600 },
-  { mode: "night", lensOn: true, ms: 2600 },
 ];
 
 const CAPTIONS: Record<Mode, [string, string]> = {
-  day: ["Low sun under your visor. You can't see the car in front.", "Grey lens down. Same sun, and you can see the road."],
-  night: ["Full headlights coming at you. The road is gone.", "Amber lens down. The white flash is softer."],
+  night: ["Full light from the other side. Your windscreen turns white.", "Amber lens down. The flash is softer, and the road is still there."],
+  day: ["Evening sun under your visor, straight in your eyes.", "Grey lens down. Now you can see the car in front."],
 };
 
 export function HeroDemo() {
@@ -24,7 +25,7 @@ export function HeroDemo() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setManual({ mode: "day", lensOn: true });
+      setManual({ mode: "night", lensOn: true });
     }
   }, []);
 

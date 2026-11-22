@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { naira, packages, SINGLE_PRICE, type PackageId } from "@/data/car";
 import { PICK_EVENT } from "./OrderForm";
 
@@ -9,59 +9,17 @@ function pick(id: PackageId) {
   window.dispatchEvent(new CustomEvent(PICK_EVENT, { detail: id }));
 }
 
-// Slides up once the reader is past the hero, and gets out of the way while the order
-// form itself is on screen so it never covers a field or the submit button.
-export function StickyOrderBar() {
-  const [pastHero, setPastHero] = useState(false);
-  const [formVisible, setFormVisible] = useState(false);
-
+/** Fires Meta's ViewContent once per visit. Renders nothing. */
+export function PixelViewContent() {
   useEffect(() => {
     const w = window as unknown as { fbq?: (...args: unknown[]) => void };
     w.fbq?.("track", "ViewContent", { content_name: "DUSKWAY 2-in-1 Visor", value: SINGLE_PRICE, currency: "NGN" });
-
-    const onScroll = () => setPastHero(window.scrollY > window.innerHeight * 0.9);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    const form = document.getElementById("order");
-    const io = form ? new IntersectionObserver(([e]) => setFormVisible(e.isIntersecting), { rootMargin: "0px 0px -20% 0px" }) : null;
-    if (form && io) io.observe(form);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      io?.disconnect();
-    };
   }, []);
-
-  const visible = pastHero && !formVisible;
-  return (
-    <div
-      aria-hidden={!visible}
-      className={`fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-dw-ink/95 px-4 py-3 backdrop-blur transition-transform duration-300 ${
-        visible ? "translate-y-0" : "pointer-events-none translate-y-full"
-      }`}
-    >
-      <div className="mx-auto flex max-w-3xl items-center gap-3">
-        <div className="relative hidden h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-white sm:block">
-          <Image src="/images/car/car9.webp" alt="" fill sizes="44px" className="object-contain p-0.5" />
-        </div>
-        <p className="min-w-0 flex-1 text-sm leading-tight text-white">
-          <span className="font-bold">From {naira(SINGLE_PRICE)}</span>
-          <span className="block text-white/60">Pay on delivery · Free delivery</span>
-        </p>
-        <a
-          href="#order"
-          tabIndex={visible ? 0 : -1}
-          className="shrink-0 rounded-full bg-dw-amber px-5 py-3 text-sm font-extrabold text-dw-ink"
-        >
-          Order Now
-        </a>
-      </div>
-    </div>
-  );
+  return null;
 }
 
-// Layout after 21st.dev "Pricing Plan Card" (@cnippet-dev): name + badge row, big price,
-// divider, checklist, full-width button, heavy border on the highlighted plan.
+// Layout after 21st.dev "Pricing Plan Card" (@cnippet-dev): name row, big price,
+// divider, checklist, full-width button, heavy border + badge on the highlighted plan.
 export function BundleCards() {
   return (
     <div className="grid gap-5 md:grid-cols-3 md:items-stretch">
@@ -98,7 +56,6 @@ export function BundleCards() {
               <span className="text-4xl font-extrabold tracking-tight tabular-nums">{naira(p.price)}</span>
               {p.was && <span className="text-base text-dw-ink/45 line-through tabular-nums">{naira(p.was)}</span>}
             </p>
-            <p className="mt-1 text-sm text-dw-ink/60">{p.note}</p>
             <hr className="my-5 border-dw-ink/10" />
             <ul className="flex-1 space-y-3">
               {perks.map((perk) => (

@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A Next.js 14 (App Router) direct-response sales page for a two-part vaginal-health ebook bundle ("7 Hidden Reasons for Persistent Vaginal Odour" + the food bonus guide). The entire page is one long scroll (`src/app/page.tsx`), built from the finalized copy in `SALES-COPY-FINAL.md`, which itself was revised against the rules in `COPYWRITING-PLAYBOOK.md`. Any copy change should happen in `SALES-COPY-FINAL.md` first, then be mirrored into `src/data/content.ts` / `src/app/page.tsx`, not the other way around.
 
+A second, unrelated product lives at **`/car`**: a pay-on-delivery sales page for the DUSKWAY 2-in-1 day/night anti-glare car visor (Omo Stores). See "The /car page" below; it shares the root layout (Meta pixel, reveal script) and nothing else.
+
 ## Commands
 
 ```bash
@@ -52,3 +54,21 @@ Book cover renders (`1224003.png`, `1223997.png`) use a plain `next/image` with 
 `public/images/` holds a copy of every asset that also exists at the repo root; the root copies are the user's original uploads, `public/images/` is what the app actually serves. Update both if an asset changes.
 
 **Facebook/Meta Pixel:** loaded site-wide in `src/app/layout.tsx` via `next/script` (`strategy="afterInteractive"`), plus the standard `noscript` fallback `<img>`. That fallback is injected via `dangerouslySetInnerHTML` on purpose: as a JSX `<img>`, React hoists it into a `<link rel="preload">`, which fires a duplicate `noscript=1` PageView for every visitor with JS on. Pixel ID `2193434301489321` is inlined there (not in `src/lib/config.ts`) since it's the only Meta pixel this page uses; if that changes, extract it to a constant the way `CHECKOUT_URL` is handled.
+
+## The /car page (DUSKWAY visor)
+
+**Copy authority:** `CAR-SALES-COPY.md` (RMBC brief at the top, then the letter) → `src/data/car.ts` (packages, features, FAQ, placeholder testimonials, Nigerian states) → `src/app/car/page.tsx`. Same rule as the main page: change copy in the markdown first. It follows `COPYWRITING-PLAYBOOK.md` house style (no em dashes, humanizer pass). Facts the owner confirmed and the copy relies on: pay on delivery, free delivery "within 24 hours" (`CAR_DELIVERY_PROMISE` in `src/lib/config.ts`), no-questions money-back guarantee. The AliExpress price anchor (about ₦21,900 + ₦6,900 shipping, 2 to 3 weeks) came from a live listing on 22 Nov 2026. The night-lens honesty line ("any tint lets in less light") is deliberate; don't add "night vision", "polarized" or "100% UV" claims.
+
+**Pricing:** 1 visor ₦15,000 · 2 for ₦25,000 · 3 + 1 free (4 visors) for ₦35,000, defined once in `packages` in `src/data/car.ts`.
+
+**Ordering has no checkout.** `src/components/car/OrderForm.tsx` validates (Nigerian phone regex, email, address, state, availability tick), fires `fbq('track','Lead')`, then sends the visitor to `wa.me/${CAR_ORDER_WHATSAPP}` with `buildOrderMessage()`: fields in form order, `*Label:* value`, a blank line between each. `tests/car.spec.ts` intercepts `wa.me` and asserts that order, so update the test if you reorder fields. Bundle cards higher up dispatch a `duskway:pick` window event to preselect a package in the form. `StickyOrderBar` fires `ViewContent` and hides while `#order` is on screen.
+
+**Testimonials are placeholders** (marked in `src/data/car.ts`); the owner is replacing them with real customer messages. Same rules as the main page's placeholders: don't polish them, don't invent more.
+
+**Brand + type:** `dw.*` tokens in `tailwind.config.ts` (ink `#0A0B0D`, W.H.O. blue `#009ADE` = day lens, amber `#FFB400` = night lens and every tappable CTA, paper `#F4F6F8`). Font is Inter Tight (`--font-inter-tight`, `font-display`), loaded only in `src/app/car/layout.tsx`, which also sets the route's own metadata/OG image (`metadataBase` omostores.vercel.app).
+
+**The "demo video" is drawn, not filmed.** No licensed under-30s clip existed (competitor videos only), so `GlareScene.tsx` renders an SVG windscreen view (factory visor, glare source in "the gap" below it, lens dropping in). `HeroDemo.tsx` loops it day → lens → night → lens; `ImageCompare.tsx` puts two scenes in a drag slider. Swap in a real video only if the owner supplies one they have rights to.
+
+**21st.dev:** the owner wants most sections based on 21st.dev (magic MCP) components. The free tier allows only 2 code fetches a day: `ImageCompare` (Image Compare, @0xuser64bit) and the package radios (Choice Cards, @felipemenezes098) came from fetched code. Every other section was rebuilt from the component's 21st.dev preview image, with the source credited in a comment above it: GlowingHero orb, Feature Bento, How It Works Steps, Testimonials Marquee (CSS in `globals.css`, `.dw-marquee`), Pricing Plan Card, Gradient CTA Banner, boardui Accordion, Minimal Footer. The project has no shadcn/radix setup; keep ports dependency-free.
+
+**Images:** originals `car1.jpg` … `car9.webp` at the repo root; served copies are webp in `public/images/car/`. `install-1..3.webp` are crops of the three photos in `car1.jpg` (the competitor's text banner was cropped off). `car4` (low-res duplicate of `car3`) and `car6` (busy competitor graphic) are deliberately unused.

@@ -62,3 +62,36 @@ html[data-js] [data-reveal]:not([data-shown]) {
     transform: none;
   }
 }
+
+/* /car testimonial marquee (layout after the 21st.dev testimonial marquees: duplicated
+   track, edge fade, pause on hover). Reduced motion turns it into a swipe row. */
+@keyframes dw-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.dw-marquee-track {
+  animation: dw-marquee 45s linear infinite;
+}
+.dw-marquee-track.dw-reverse {
+  animation-direction: reverse;
+  animation-duration: 55s;
+}
+.dw-marquee:hover .dw-marquee-track {
+  animation-play-state: paused;
+}
+.dw-marquee {
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dw-marquee {
+    overflow-x: auto;
+    mask-image: none;
+  }
+  .dw-marquee-track {
+    animation: none;
+  }
+  .dw-marquee-dup {
+    display: none;
+  }
+}

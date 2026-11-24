@@ -9,9 +9,9 @@ const interTight = Inter_Tight({
   display: "swap",
 });
 
-const title = "Your Car's Sun Visor Was Never Built To Stop This Glare | DUSKWAY 2-in-1";
+const title = "DUSKWAY 2-in-1 Day & Night Car Visor | Omo Stores";
 const description =
-  "The DUSKWAY 2-in-1 clips onto your visor: a grey lens for the low sun, an amber lens for full headlights at night. Pay on delivery, free delivery.";
+  "The DUSKWAY 2-in-1 clips onto your visor: a grey shield for harsh sun and an amber shield for full light at night. Pay on delivery, free delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://omostores.vercel.app"),

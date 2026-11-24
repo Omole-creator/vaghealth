@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("/car (DUSKWAY visor)", () => {
-  test("headline, demo, offer and form are visible", async ({ page }) => {
+  test("headline, videos, offer and form are visible", async ({ page }) => {
     await page.goto("/car");
     await expect(page.getByRole("heading", { level: 1, name: /three seconds after oncoming full light/i })).toBeVisible();
-    await expect(page.getByRole("button", { name: /flip lens/i })).toBeVisible();
+    await expect(page.locator("header video")).toHaveCount(2);
     await expect(page.getByTestId("pick-2")).toBeVisible();
     await expect(page.getByTestId("order-form")).toBeVisible();
   });
@@ -12,6 +12,12 @@ test.describe("/car (DUSKWAY visor)", () => {
   test("the hero never shows a price", async ({ page }) => {
     await page.goto("/car");
     await expect(page.locator("header").first()).not.toContainText("₦");
+  });
+
+  test("placeholder reviews and the old number never reach buyers", async ({ page }) => {
+    await page.goto("/car");
+    await expect(page.locator("main")).not.toContainText("PLACEHOLDER");
+    expect(await page.content()).not.toContain("9048744395");
   });
 
   test("every order CTA points at the in-page form", async ({ page }) => {
@@ -55,7 +61,7 @@ test.describe("/car (DUSKWAY visor)", () => {
     await page.locator("#confirm").check();
     await page.getByTestId("order-submit").click();
 
-    await expect.poll(() => sentUrl).toContain("wa.me/2349048744395");
+    await expect.poll(() => sentUrl).toContain("wa.me/2349052745033");
     const text = new URL(sentUrl).searchParams.get("text")!;
     const order = [
       "Package:* 3 Visors + 1 FREE (4 visors)",

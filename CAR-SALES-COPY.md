@@ -13,9 +13,9 @@ Source of truth for the wording on `/car`. Change copy here first, then mirror i
 - **Claims:** "softens" and "cuts". Never "stops all glare", "night vision", "polarized" or "100% UV".
 - **Price:** 15,000 / 25,000 / 35,000 for 3 + 1 free. No crossed-out 25,000 (it was never the price). Black Friday is carried by the bundles, with no deadline. Never mention other shops or AliExpress.
 
-## HEADLINE (owner is choosing a new one)
+## HEADLINE (chosen by the owner)
 
-What Happens In The Three Seconds After Oncoming Full Light Blinds You?
+New 2-In-1 Shield Clips Onto Your Car Visor In Seconds And Softens Full Light At Night And Harsh Sun By Day
 
 `[VIDEOS side by side: night.mp4 "At night", day.mp4 "In the day"]`
 
@@ -107,4 +107,4 @@ Package, full name, WhatsApp number, other phone (optional), email, delivery add
 
 ## TESTIMONIALS
 
-Hidden until there are real customer messages. See `SHOW_TESTIMONIALS` in `src/data/car.ts`.
+Sample wording sits in `src/data/car.ts`. It shows on local and preview builds with a "Sample" label, and never on the public site. Replace it with real customer messages, then set `TESTIMONIALS_ARE_REAL` to true.

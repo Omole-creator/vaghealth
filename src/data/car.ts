@@ -32,12 +32,32 @@ export const installSteps = [
   "Push the clip back until it holds tight.",
 ];
 
-// Real customer messages only. Invented reviews must never be shown to buyers, so the
-// section stays hidden until this is replaced with real ones and the flag is set to true.
-export const SHOW_TESTIMONIALS = false;
+// SAMPLES, not real customers. They show on local and Vercel preview builds (labelled) so
+// the owner can see the layout, and never on the public site. Replace them with real
+// customer messages, then set TESTIMONIALS_ARE_REAL to true.
+export const TESTIMONIALS_ARE_REAL = false;
+export const SHOW_TESTIMONIALS = TESTIMONIALS_ARE_REAL || process.env.VERCEL_ENV !== "production";
 
 export const testimonials = [
-  { quote: "PLACEHOLDER: paste a real customer message here.", name: "Name", city: "City" },
+  {
+    quote:
+      "I drive Lekki to Ikeja every day and that evening sun for Third Mainland used to finish me. Now I just flip the grey one down. Small thing but e don help me well well.",
+    name: "Tunde A.",
+    city: "Lagos",
+  },
+  { quote: "Bought 2, one for me and one for my wife's car. Fixing it no reach one minute.", name: "Emeka O.", city: "Enugu" },
+  {
+    quote:
+      "Na the night side I buy am for. Those trailers with full light for Lagos-Ibadan expressway, at least now e no dey blind me like before.",
+    name: "Ibrahim S.",
+    city: "Ibadan",
+  },
+  {
+    quote: "I was scared it won't fit my Highlander but it fit well. Delivery was fast and I paid when it came.",
+    name: "Funmi B.",
+    city: "Abuja",
+  },
+  { quote: "My dad drives at night a lot so I got him one. He said he should have had it long ago.", name: "Ada N.", city: "Port Harcourt" },
 ];
 
 export const faqs = [

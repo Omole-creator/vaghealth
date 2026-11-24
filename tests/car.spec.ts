@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("/car (DUSKWAY visor)", () => {
   test("headline, videos, offer and form are visible", async ({ page }) => {
     await page.goto("/car");
-    await expect(page.getByRole("heading", { level: 1, name: /three seconds after oncoming full light/i })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1, name: /new 2-in-1 shield clips onto your car visor/i })).toBeVisible();
     await expect(page.locator("header video")).toHaveCount(2);
     await expect(page.getByTestId("pick-2")).toBeVisible();
     await expect(page.getByTestId("order-form")).toBeVisible();
@@ -14,9 +14,10 @@ test.describe("/car (DUSKWAY visor)", () => {
     await expect(page.locator("header").first()).not.toContainText("₦");
   });
 
-  test("placeholder reviews and the old number never reach buyers", async ({ page }) => {
+  test("sample reviews are always labelled and the old number is gone", async ({ page }) => {
     await page.goto("/car");
-    await expect(page.locator("main")).not.toContainText("PLACEHOLDER");
+    const samples = await page.getByText("Sample, not a real review").count();
+    expect(samples).toBe(await page.locator("figure blockquote").count());
     expect(await page.content()).not.toContain("9048744395");
   });
 

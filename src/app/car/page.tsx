@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/RevealSection";
 import { AutoVideo } from "@/components/car/AutoVideo";
 import { OrderForm } from "@/components/car/OrderForm";
 import { BundleCards, PixelViewContent } from "@/components/car/CarClient";
-import { faqs, installSteps, OFFER_HEADING, SHOW_TESTIMONIALS, testimonials } from "@/data/car";
+import { faqs, installSteps, OFFER_HEADING, SHOW_TESTIMONIALS, TESTIMONIALS_ARE_REAL, testimonials } from "@/data/car";
 import { CAR_DELIVERY_PROMISE, CAR_WHATSAPP_DISPLAY, CAR_WHATSAPP_URL } from "@/lib/config";
 
 // Section order and wording follow CAR-SALES-COPY.md. Change copy there first.
@@ -51,8 +51,8 @@ export default function CarPage() {
           <p className="text-lg font-extrabold tracking-tight">
             Omo<span className="text-dw-amber">Stores</span>
           </p>
-          <h1 className="hero-in mt-6 text-[32px] font-extrabold leading-[1.06] tracking-[-0.03em] sm:text-[52px]">
-            What Happens In The Three Seconds After Oncoming Full Light Blinds You?
+          <h1 className="hero-in mt-6 text-[28px] font-extrabold leading-[1.1] tracking-[-0.03em] sm:text-[44px]">
+            New 2-In-1 Shield Clips Onto Your Car Visor In Seconds And Softens Full Light At Night And Harsh Sun By Day
           </h1>
 
           <div className="hero-in mx-auto mt-6 grid max-w-xl grid-cols-2 gap-3" style={{ animationDelay: "0.1s" }}>
@@ -173,6 +173,7 @@ export default function CarPage() {
           <div className="mx-auto mt-8 grid max-w-4xl gap-4 px-4 md:grid-cols-3">
             {testimonials.map((t) => (
               <figure key={t.name + t.city} className="rounded-2xl border border-dw-ink/10 bg-white p-5">
+                {!TESTIMONIALS_ARE_REAL && <p className="mb-2 text-xs font-bold uppercase text-red-600">Sample, not a real review</p>}
                 <blockquote className="leading-relaxed text-dw-ink/85">&ldquo;{t.quote}&rdquo;</blockquote>
                 <figcaption className="mt-3 text-sm font-semibold">
                   {t.name}, {t.city}

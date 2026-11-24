@@ -19,9 +19,9 @@ New 2-In-1 Shield Clips Onto Your Car Visor In Seconds And Softens Full Light At
 
 `[VIDEOS side by side: night.mp4 "At night", day.mp4 "In the day"]`
 
-## SUBHEAD (owner is choosing a new one)
+## SUBHEAD (chosen by the owner)
 
-Most drivers just hold the steering and pray. A thin amber shield that clips onto your car's visor softens that white flash before it reaches your eyes.
+The next time a driver refuses to dim his light, you won't need to raise your hand or look away. Pull this down with one hand and keep your eyes on the road.
 
 `[BUTTON: Order Now, Pay On Delivery]`
 
@@ -107,4 +107,4 @@ Package, full name, WhatsApp number, other phone (optional), email, delivery add
 
 ## TESTIMONIALS
 
-Sample wording sits in `src/data/car.ts`. It shows on local and preview builds with a "Sample" label, and never on the public site. Replace it with real customer messages, then set `TESTIMONIALS_ARE_REAL` to true.
+Sample wording sits in `src/data/car.ts`. It shows on local dev and Vercel preview builds only, and never on the public site. Replace it with real customer messages, then set `TESTIMONIALS_ARE_REAL` to true.

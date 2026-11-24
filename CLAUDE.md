@@ -65,7 +65,7 @@ Book cover renders (`1224003.png`, `1223997.png`) use a plain `next/image` with 
 
 **Pricing:** 1 for ₦15,000, 2 for ₦25,000, 3 + 1 free for ₦35,000 (`packages` in `src/data/car.ts`). There is no crossed-out ₦25,000 single price because the owner confirmed it was never the price. The crossed-out bundle prices are simply quantity × 15,000. `OFFER_HEADING` says Black Friday with no deadline; change it after the season.
 
-**Testimonials:** the owner asked for the sample reviews back while they collect real ones. They render, labelled "Sample", on local and Vercel preview builds only (`SHOW_TESTIMONIALS` checks `VERCEL_ENV`). Set `TESTIMONIALS_ARE_REAL = true` only once every quote is a real customer's words; don't show invented reviews to buyers.
+**Testimonials:** the owner asked for the sample reviews back while they collect real ones. They render, without a label at the owner's request, in local dev and Vercel preview builds only (`SHOW_TESTIMONIALS` in `src/data/car.ts` defaults to off everywhere else). Set `TESTIMONIALS_ARE_REAL = true` only once every quote is a real customer's words; don't show invented reviews to buyers.
 
 **Ordering has no checkout.** `OrderForm.tsx` validates, fires `fbq('track','Lead')`, then opens `wa.me/${CAR_ORDER_WHATSAPP}` (0905 274 5033) with `buildOrderMessage()`: fields in form order, a blank line between each. `tests/car.spec.ts` asserts that order. The ebook pages keep their own refund number (0904 874 4395) on purpose. Bundle cards dispatch `duskway:pick` to preselect a package. `PixelViewContent` fires `ViewContent`.
 

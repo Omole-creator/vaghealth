@@ -32,11 +32,11 @@ export const installSteps = [
   "Push the clip back until it holds tight.",
 ];
 
-// SAMPLES, not real customers. They show on local and Vercel preview builds (labelled) so
+// SAMPLES, not real customers. They show only in local dev and Vercel preview builds so
 // the owner can see the layout, and never on the public site. Replace them with real
 // customer messages, then set TESTIMONIALS_ARE_REAL to true.
 export const TESTIMONIALS_ARE_REAL = false;
-export const SHOW_TESTIMONIALS = TESTIMONIALS_ARE_REAL || process.env.VERCEL_ENV !== "production";
+export const SHOW_TESTIMONIALS = TESTIMONIALS_ARE_REAL || process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview";
 
 export const testimonials = [
   {

@@ -1,28 +1,30 @@
 # FACEBOOK AD, DUSKWAY VISOR (car11.mp4, 14 seconds)
 
-Read it like you are talking to a friend in the car. It's fine to breathe, pause and sound annoyed.
+Plain English, no pidgin. Every line is timed to the cuts in car11.mp4. If a line finishes early, stay quiet until the next shot.
 
-## Script 1 (recommended): you are inside the car
-
-| Time | On screen | Voice-over | How to say it |
-|---|---|---|---|
-| 0 to 4s | Dark road, then full light | "Ah! Oga, dim your light now! I can't see the road!" | Shout it. Real panic. |
-| 4 to 8s | The visor in hand | "See ehn, just clip this thing on your visor." | Calm down. Friend to friend. |
-| 8 to 9s | Grey shield, daylight | "Sun? Use the grey." | Quick. |
-| 9 to 12s | Full light, amber comes down | "Full light? Bring down the amber. You see it?" | Slow on "You see it?" |
-| 12 to 14s | Driver flips it up | "Tap here, let me show you." | Smile. |
-
-## Script 2: start with a dare
+## Script 1 (recommended): a woman's voice, as if she is the driver
 
 | Time | On screen | Voice-over | How to say it |
 |---|---|---|---|
-| 0 to 4s | Dark road, then full light | "Look at this road well. Now tell me what you can see." | Pause when the light hits. |
-| 4 to 8s | The visor in hand | "Nothing, abi? That's why drivers need this on their visor." | Like you've proved a point. |
-| 8 to 9s | Grey shield, daylight | "Grey for sun." | Quick. |
-| 9 to 12s | Full light, amber comes down | "Amber for full light. Now look again." | Pause and let them look. |
-| 12 to 14s | Driver flips it up | "Tap, see how it works." | Simple. |
+| 0.4 to 1.6s | Dark road, a car is coming closer | "Why won't he dim his light?" | Annoyed |
+| 1.6 to 3.9s | She raises her hand, then loses the road | "I can't see! I can't see the road!" | Real panic, then stop |
+| 3.9 to 5.9s | Peeling the film off the new shields | "Nobody should drive like this." | Calm |
+| 5.9 to 7.7s | Opening the two shields and the clip | "Clip this on your visor." | Simple |
+| 7.7 to 9.3s | Bright sun, the grey shield comes down | "Grey for the sun." | Quick |
+| 9.3 to 11.9s | Full light, then the amber shield comes down at 10.3s | "Amber for full light... look now." | Say "look now" once the amber is down |
+| 11.9 to 14s | She folds it up and drives on, relaxed | "Tap and see it." | Relaxed |
 
-Run both with the same audience for a few days. Keep the one that gets orders at the lower cost.
+## Script 2: a narrator
+
+| Time | On screen | Voice-over | How to say it |
+|---|---|---|---|
+| 0 to 1.6s | Dark road, a car is coming closer | "Don't blink. Watch that car." | Low and serious |
+| 1.6 to 3.9s | She raises her hand, then loses the road | "Look! She can't even see the road anymore!" | Alarmed |
+| 3.9 to 5.9s | Peeling the film off the new shields | "This is what she needed." | Calm |
+| 5.9 to 7.7s | Opening the two shields and the clip | "It clips onto your visor." | Simple |
+| 7.7 to 9.3s | Bright sun, the grey shield comes down | "Sun in your face? Grey." | Quick |
+| 9.3 to 11.9s | Full light, then the amber shield comes down at 10.3s | "Full light again... see the road now?" | Pause before "see" |
+| 11.9 to 14s | She folds it up and drives on, relaxed | "Tap to see how it works." | Relaxed |
 
 ## Ad copy (primary text, 64 words)
 
@@ -45,6 +47,6 @@ Tap below to see how it works.
 - No deaths, accidents or FRSC numbers in the ad. Shock can get it rejected. They stay on the page.
 - Don't say "no more glare", "night vision" or "100%".
 - Don't say "I use it" in the voice-over unless the person speaking really uses it.
-- Seconds 2 to 3 of car11 look like the car is leaving the road. If Meta rejects the ad as sensational, cut that part first.
+- From 2.0 to 2.9 seconds, car11 looks like the car is leaving the road. If Meta rejects the ad as sensational, cut that part first.
 - The video has "The problem" and "The solution" typed on it with emojis, and bits of phone screen on the right edge. Ask your supplier for the clean file.
 - Keep the supplier's written permission for the video.

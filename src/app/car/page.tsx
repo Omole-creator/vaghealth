@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/RevealSection";
 import { AutoVideo } from "@/components/car/AutoVideo";
 import { OrderForm } from "@/components/car/OrderForm";
 import { BundleCards, PixelViewContent } from "@/components/car/CarClient";
-import { faqs, installSteps, OFFER_HEADING, SHOW_TESTIMONIALS, TESTIMONIALS_ARE_REAL, testimonials } from "@/data/car";
+import { faqs, installSteps, OFFER_HEADING, SHOW_TESTIMONIALS, testimonials } from "@/data/car";
 import { CAR_DELIVERY_PROMISE, CAR_WHATSAPP_DISPLAY, CAR_WHATSAPP_URL } from "@/lib/config";
 
 // Section order and wording follow CAR-SALES-COPY.md. Change copy there first.
@@ -65,8 +65,7 @@ export default function CarPage() {
           </div>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
-            Most drivers just hold the steering and pray. A thin amber shield that clips onto your car&apos;s visor softens that white flash before it
-            reaches your eyes.
+            The next time a driver refuses to dim his light, you won&apos;t need to raise your hand or look away. Pull this down with one hand and keep your eyes on the road.
           </p>
           <OrderCTA className="mt-7 w-full sm:w-auto">Order Now, Pay On Delivery</OrderCTA>
           <ul className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-white/75">
@@ -173,7 +172,6 @@ export default function CarPage() {
           <div className="mx-auto mt-8 grid max-w-4xl gap-4 px-4 md:grid-cols-3">
             {testimonials.map((t) => (
               <figure key={t.name + t.city} className="rounded-2xl border border-dw-ink/10 bg-white p-5">
-                {!TESTIMONIALS_ARE_REAL && <p className="mb-2 text-xs font-bold uppercase text-red-600">Sample, not a real review</p>}
                 <blockquote className="leading-relaxed text-dw-ink/85">&ldquo;{t.quote}&rdquo;</blockquote>
                 <figcaption className="mt-3 text-sm font-semibold">
                   {t.name}, {t.city}

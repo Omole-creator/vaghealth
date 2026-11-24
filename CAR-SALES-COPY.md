@@ -39,7 +39,7 @@ Not all of those accidents were caused by light. But every driver knows how quic
 
 At night, one driver comes at you with full light and refuses to dim it. For about two or three seconds, you can't see the road. You hold your steering and hope there's no pothole, no trailer parked without light and nobody crossing.
 
-In the day, it's the sun. Around 5pm it faces you directly. You bring your visor down and it still doesn't cover it, so you squeeze your face and use one hand to block it while you drive with the other.
+In the day, it's the sun. Around 2pm it faces you directly. You bring your visor down and it still doesn't cover it, so you squeeze your face and use one hand to block it while you drive with the other.
 
 ### Why The Visor In Your Car Can't Help You
 
@@ -81,7 +81,7 @@ If the DUSKWAY doesn't do what we said, send us a message on WhatsApp and we'll 
 
 ### You Will Drive Again Tomorrow
 
-The sun will still be there by 5pm, and so will the driver who never dims his light.
+The sun will still be there by 2pm, and so will the driver who never dims his light.
 
 You can keep managing it with one hand on your face.
 

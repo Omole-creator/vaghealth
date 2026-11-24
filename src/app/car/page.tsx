@@ -48,9 +48,12 @@ export default function CarPage() {
       {/* ===== HERO ===== */}
       <header className="bg-dw-ink text-white">
         <div className="mx-auto max-w-3xl px-4 pb-12 pt-5 text-center">
-          <p className="text-lg font-extrabold tracking-tight">
-            Omo<span className="text-dw-amber">Stores</span>
-          </p>
+          <div className="flex items-center justify-between">
+            <p className="text-lg font-extrabold tracking-tight">
+              Omo<span className="text-dw-amber">Stores</span>
+            </p>
+            <p className="rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white/85">Pay on delivery</p>
+          </div>
           <h1 className="hero-in mt-6 text-[28px] font-extrabold leading-[1.1] tracking-[-0.03em] sm:text-[44px]">
             New 2-In-1 Shield Clips Onto Your Car Visor In Seconds And Softens Full Light At Night And Harsh Sun By Day
           </h1>
@@ -69,9 +72,14 @@ export default function CarPage() {
           </p>
           <OrderCTA className="mt-7 w-full sm:w-auto">Order Now, Pay On Delivery</OrderCTA>
           <ul className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-white/75">
-            <li>Pay on delivery</li>
-            <li>Free delivery {CAR_DELIVERY_PROMISE}</li>
-            <li>Money-back guarantee</li>
+            {["Pay on delivery", `Free delivery ${CAR_DELIVERY_PROMISE}`, "Money-back guarantee"].map((t) => (
+              <li key={t} className="flex items-center gap-1.5">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" className="shrink-0 text-green-500">
+                  <path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {t}
+              </li>
+            ))}
           </ul>
         </div>
       </header>
@@ -95,7 +103,7 @@ export default function CarPage() {
             crossing.
           </p>
           <p>
-            <strong className="text-dw-ink">In the day</strong>, it&apos;s the sun. Around 5pm it faces you directly. You bring your visor down and it still
+            <strong className="text-dw-ink">In the day</strong>, it&apos;s the sun. Around 2pm it faces you directly. You bring your visor down and it still
             doesn&apos;t cover it, so you squeeze your face and use one hand to block it while you drive with the other.
           </p>
         </Prose>
@@ -206,7 +214,7 @@ export default function CarPage() {
       <RevealSection className="bg-white py-12 text-center sm:py-16">
         <Prose>
           <H2 className="text-dw-ink">You Will Drive Again Tomorrow</H2>
-          <p>The sun will still be there by 5pm, and so will the driver who never dims his light.</p>
+          <p>The sun will still be there by 2pm, and so will the driver who never dims his light.</p>
           <p>You can keep managing it with one hand on your face.</p>
           <p className="font-semibold text-dw-ink">Or you can clip this on in seconds, and give your eyes a fighting chance.</p>
           <OrderCTA className="w-full sm:w-auto">Yes, Send Me My Visor</OrderCTA>

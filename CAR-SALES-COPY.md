@@ -51,7 +51,11 @@ So you leave it up, and the light enters your eyes.
 
 ### Use This Instead
 
-It's called the DUSKWAY 2-in-1 Visor. It clips onto the visor already in your car, and it has two shields you can see the road through.
+It's called the
+
+#### DUSKWAY 2-in-1 Visor
+
+It clips onto the visor already in your car, and it has two shields you can see the road through.
 
 **Amber, for the night.** Flip it down when a car is coming with full light. It softens the light before it reaches your eyes.
 

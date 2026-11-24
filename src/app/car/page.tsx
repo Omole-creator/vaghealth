@@ -137,9 +137,11 @@ export default function CarPage() {
           </div>
           <div className="space-y-4 text-[17px] leading-relaxed text-dw-ink/85 sm:text-lg">
             <H2 className="text-dw-ink">Use This Instead</H2>
-            <p>
-              It&apos;s called the DUSKWAY 2-in-1 Visor. It clips onto the visor already in your car, and it has two shields you can see the road through.
-            </p>
+            <div>
+              <p>It&apos;s called the</p>
+              <h3 className="mt-1 text-2xl font-extrabold leading-tight tracking-tight text-dw-ink sm:text-3xl">DUSKWAY 2-in-1 Visor</h3>
+            </div>
+            <p>It clips onto the visor already in your car, and it has two shields you can see the road through.</p>
             <p className="border-l-4 border-dw-amber pl-4">
               <strong className="text-dw-ink">Amber, for the night.</strong> Flip it down when a car is coming with full light. It softens the light before
               it reaches your eyes.

@@ -1,24 +1,29 @@
 # FACEBOOK AD, DUSKWAY VISOR (car11.mp4, 14 seconds)
 
-Plain English, no pidgin. Don't read it. Watch the video twice, then say it as if you are sitting in that car.
+Plain English, no pidgin. It tells the story of the woman in the video, in the order it happens.
 
-## Script (one person, talking non-stop)
+## Script
 
-> Ah ah, what's wrong with this man? Dim your light now! ... He won't even listen. See, just get this for your car. If it's the sun, this one. If it's people like him ... this one. I've put the link there. Check it.
+She was driving fine. Then this light entered her eyes. Look.
 
-| Time | On screen | Say | How |
-|---|---|---|---|
-| 0 to 3.9s | The car comes closer, full light, she raises her hand and loses the road | "Ah ah, what's wrong with this man? Dim your light now!" | Start normal, get angry, shout the last part |
-| 3.9 to 7.7s | Peeling the film, then opening the shields and clip | "He won't even listen. See, just get this for your car." | Sigh, then talk to a friend |
-| 7.7 to 9.3s | Bright sun, the grey shield comes down | "If it's the sun, this one." | Don't stop, keep going |
-| 9.3 to 11.9s | Full light, then the amber comes down at 10.3s | "If it's people like him... this one." | Pause, then "this one" as the amber lands |
-| 11.9 to 14s | She folds it up and drives on | "I've put the link there. Check it." | Easy, like you're done talking |
+So she got this.
 
-## A second opening to test (only the first 3.9 seconds change)
+It has two sides.
 
-> You know those drivers that never dim their light? Look at this one.
+This one is for the sun.
 
-Then continue from: "He won't even listen."
+Same light again. She brings this down.
+
+And she keeps driving. Get yours.
+
+## Where each line goes
+
+- 0 to 3.9s: the road, the light, her hand on her face, then she loses the road. Say "Look" as she loses the road, then keep quiet.
+- 3.9 to 5.9s: she peels the film off the new visor.
+- 5.9 to 7.7s: she opens the two shields.
+- 7.7 to 9.3s: the grey comes down in the sun.
+- 9.3 to 11.9s: full light again. Say "She brings this down" as the amber comes down (10.3s).
+- 11.9 to 14s: she folds it and drives on.
 
 ## Ad copy (primary text, 64 words)
 

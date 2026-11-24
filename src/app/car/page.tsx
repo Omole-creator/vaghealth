@@ -122,16 +122,18 @@ export default function CarPage() {
       {/* ===== PRODUCT ===== */}
       <RevealSection className="py-12 sm:py-16">
         <div className="mx-auto grid max-w-4xl items-center gap-8 px-4 md:grid-cols-2">
-          <div className="overflow-hidden rounded-3xl bg-white">
-            <Image
-              src="/images/car/car2.webp"
-              alt="The DUSKWAY 2-in-1 visor with the amber shield on top and the grey shield below"
-              width={894}
-              height={895}
-              quality={90}
-              sizes="(max-width: 768px) 100vw, 430px"
-              className="h-auto w-full"
-            />
+          <div>
+            <div className="overflow-hidden rounded-3xl bg-white">
+              <Image
+                src="/images/car/car2.webp"
+                alt="The DUSKWAY 2-in-1 visor with the amber shield on top and the grey shield below"
+                width={894}
+                height={895}
+                quality={90}
+                sizes="(max-width: 768px) 100vw, 430px"
+                className="h-auto w-full"
+              />
+            </div>
           </div>
           <div className="space-y-4 text-[17px] leading-relaxed text-dw-ink/85 sm:text-lg">
             <H2 className="text-dw-ink">Use This Instead</H2>
@@ -165,6 +167,15 @@ export default function CarPage() {
               ))}
             </ol>
             <p className="mt-6 text-lg font-semibold">You don&apos;t need a mechanic.</p>
+            <Image
+              src="/images/car/car5.webp"
+              alt="The back of the visor, showing the sliding clip and the button"
+              width={700}
+              height={595}
+              quality={90}
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="mt-6 h-auto w-full max-w-[400px] rounded-3xl"
+            />
           </div>
           <AutoVideo
             name="install"
@@ -177,15 +188,24 @@ export default function CarPage() {
       {SHOW_TESTIMONIALS && (
         <RevealSection className="py-12 sm:py-16">
           <H2 className="px-4 text-center text-dw-ink">What Drivers Are Saying</H2>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-4 px-4 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name + t.city} className="rounded-2xl border border-dw-ink/10 bg-white p-5">
-                <blockquote className="leading-relaxed text-dw-ink/85">&ldquo;{t.quote}&rdquo;</blockquote>
-                <figcaption className="mt-3 text-sm font-semibold">
-                  {t.name}, {t.city}
-                </figcaption>
-              </figure>
-            ))}
+          {/* One row moving right to left, after 21st.dev "Testimonials Marquee" (@shadcnspace) */}
+          <div className="dw-marquee mt-8">
+            <div className="dw-marquee-track flex w-max">
+              {[0, 1].map((copy) =>
+                testimonials.map((t) => (
+                  <figure
+                    key={`${copy}-${t.name}-${t.city}`}
+                    aria-hidden={copy === 1 || undefined}
+                    className={`mr-4 w-[290px] shrink-0 rounded-2xl border border-dw-ink/10 bg-white p-5 sm:w-[340px] ${copy === 1 ? "dw-marquee-dup" : ""}`}
+                  >
+                    <blockquote className="leading-relaxed text-dw-ink/85">&ldquo;{t.quote}&rdquo;</blockquote>
+                    <figcaption className="mt-3 text-sm font-semibold">
+                      {t.name}, {t.city}
+                    </figcaption>
+                  </figure>
+                ))
+              )}
+            </div>
           </div>
         </RevealSection>
       )}
@@ -196,6 +216,18 @@ export default function CarPage() {
           <H2 className="text-dw-ink">{OFFER_HEADING}</H2>
           <p>One visor is ₦15,000. If you have more than one car at home, the bundles are cheaper.</p>
           <p className="font-semibold text-dw-ink">We bring it to you free, and you pay when it&apos;s in your hand.</p>
+        </div>
+        {/* car3 is the sharp copy of car4.jpg (same photo, 894px wide instead of 300px) */}
+        <div className="mx-auto mt-8 max-w-md px-4">
+          <Image
+            src="/images/car/car3.webp"
+            alt="The visor opened out: grey shield standing, amber shield lying flat, clip in the middle"
+            width={894}
+            height={752}
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 420px"
+            className="h-auto w-full rounded-3xl bg-white"
+          />
         </div>
         <div className="mx-auto mt-10 max-w-4xl px-4">
           <BundleCards />

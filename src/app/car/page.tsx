@@ -167,15 +167,6 @@ export default function CarPage() {
               ))}
             </ol>
             <p className="mt-6 text-lg font-semibold">You don&apos;t need a mechanic.</p>
-            <Image
-              src="/images/car/car5.webp"
-              alt="The back of the visor, showing the sliding clip and the button"
-              width={700}
-              height={595}
-              quality={90}
-              sizes="(max-width: 768px) 100vw, 400px"
-              className="mt-6 h-auto w-full max-w-[400px] rounded-3xl"
-            />
           </div>
           <AutoVideo
             name="install"

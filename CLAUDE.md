@@ -71,7 +71,7 @@ Book cover renders (`1224003.png`, `1223997.png`) use a plain `next/image` with 
 
 **Videos:** `public/videos/car/` is cut from the owner's root `car8/9/10/11.mp4` (untracked; the owner says they are from the supplier, with permission). `night` = car9 with burned-in captions, the "link in bio" ending and the run-off-road seconds cut out. `day` = only the last part of car10, because the rest shows a white-bordered model customers do NOT receive. `install` = car8. car11 is the ad creative, not used on the page. `AutoVideo.tsx` plays them muted and only when near the screen.
 
-**Images:** `car2`, `car3` (the sharp copy of `car4.jpg`), `car5` and `car9` on the page, `car8` as the OG image. These are the original files; don't re-encode or filter them. Stock photos (Unsplash, Pexels) were ruled out because they would show a different product. Sharper pictures should be the owner's own photos of the real unit.
+**Images:** `car2`, `car3` (the sharp copy of `car4.jpg`) and `car9` on the page (the owner had `car5` removed from above the install video), `car8` as the OG image. These are the original files; don't re-encode or filter them. Stock photos (Unsplash, Pexels) were ruled out because they would show a different product. Sharper pictures should be the owner's own photos of the real unit.
 
 **Removed by the owner or in the trimming pass they asked for, don't add back unasked:** sticky order bar, 3-step list above the form, package notes, town / landmark / car / notes fields, all P.S. lines, footer disclaimer, the drawn demo and compare slider, feature tiles, ember-months section, "Picture This December".
 

@@ -2,7 +2,18 @@
 
 Plain English, no pidgin. It tells the story of the woman in the video, in the order it happens.
 
-## Script
+## Script 1, "Watch her hand" (recommended)
+
+- 0:00 to 0:01.5: "Watch her hand." (quiet, like a secret)
+- 0:01.6 to 0:03.9: "Just like that, she lost the road." (shocked)
+- 0:03.9 to 0:05.9: "Then she got this new shield." (relaxed)
+- 0:05.9 to 0:07.6: "It just clips on her visor." (simple)
+- 0:07.7 to 0:09.2: "Now the sun can come." (confident, small smile)
+- 0:09.3 to 0:10.2: "Even full light." (serious)
+- 0:10.3 to 0:11.8: "Watch her hand again." (quiet, same as the first line)
+- 0:12 to 0:14: "Much better. Get yours." (warm)
+
+## Script 2, her story
 
 She was driving fine. Then this light entered her eyes. Look.
 

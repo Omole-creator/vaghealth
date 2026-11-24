@@ -4,21 +4,21 @@ Plain English, no pidgin. Don't read it. Watch the video twice, then say it as i
 
 ## Script (one person, talking non-stop)
 
-> Ah ah, what is this one doing? Dim your light now! ... He can't even hear you. So put this on your visor. This side is for the sun ... and this side is for people like him. If you drive, tap and get it.
+> Ah ah, what's wrong with this man? Dim your light now! ... He won't even listen. See, just get this for your car. If it's the sun, this one. If it's people like him ... this one. I've put the link there. Check it.
 
 | Time | On screen | Say | How |
 |---|---|---|---|
-| 0 to 3.9s | The car comes closer, full light, she raises her hand and loses the road | "Ah ah, what is this one doing? Dim your light now!" | Start normal, get angry, shout the last part |
-| 3.9 to 7.7s | Peeling the film, then opening the shields and clip | "He can't even hear you. So put this on your visor." | Laugh a little, then calm |
-| 7.7 to 9.3s | Bright sun, the grey shield comes down | "This side is for the sun..." | Don't stop, keep going |
-| 9.3 to 11.9s | Full light, then the amber comes down at 10.3s | "...and this side is for people like him." | Say "people like him" as the amber lands |
-| 11.9 to 14s | She folds it up and drives on | "If you drive, tap and get it." | Easy, like advice |
+| 0 to 3.9s | The car comes closer, full light, she raises her hand and loses the road | "Ah ah, what's wrong with this man? Dim your light now!" | Start normal, get angry, shout the last part |
+| 3.9 to 7.7s | Peeling the film, then opening the shields and clip | "He won't even listen. See, just get this for your car." | Sigh, then talk to a friend |
+| 7.7 to 9.3s | Bright sun, the grey shield comes down | "If it's the sun, this one." | Don't stop, keep going |
+| 9.3 to 11.9s | Full light, then the amber comes down at 10.3s | "If it's people like him... this one." | Pause, then "this one" as the amber lands |
+| 11.9 to 14s | She folds it up and drives on | "I've put the link there. Check it." | Easy, like you're done talking |
 
 ## A second opening to test (only the first 3.9 seconds change)
 
-> You know those drivers that never dim their light? Look at this.
+> You know those drivers that never dim their light? Look at this one.
 
-Then continue from: "He won't even hear you. So put this on your visor."
+Then continue from: "He won't even listen."
 
 ## Ad copy (primary text, 64 words)
 

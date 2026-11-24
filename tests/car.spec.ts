@@ -14,9 +14,11 @@ test.describe("/car (DUSKWAY visor)", () => {
     await expect(page.locator("header").first()).not.toContainText("₦");
   });
 
-  test("the old number is gone", async ({ page }) => {
+  test("the contact number shown is 0905, not the order line", async ({ page }) => {
     await page.goto("/car");
-    expect(await page.content()).not.toContain("9048744395");
+    const link = page.locator("footer a");
+    await expect(link).toHaveText("0905 274 5033");
+    await expect(link).toHaveAttribute("href", "https://wa.me/2349052745033");
   });
 
   test("every order CTA points at the in-page form", async ({ page }) => {
@@ -63,7 +65,7 @@ test.describe("/car (DUSKWAY visor)", () => {
     await page.locator("#confirm").check();
     await page.getByTestId("order-submit").click();
 
-    await expect.poll(() => sentUrl).toContain("wa.me/2349052745033");
+    await expect.poll(() => sentUrl).toContain("wa.me/2349048744395");
     const text = new URL(sentUrl).searchParams.get("text")!;
     const order = [
       "Package:* 3 Visors + 1 FREE (4 visors)",

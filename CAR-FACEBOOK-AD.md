@@ -1,30 +1,24 @@
 # FACEBOOK AD, DUSKWAY VISOR (car11.mp4, 14 seconds)
 
-Plain English, no pidgin. Every line is timed to the cuts in car11.mp4. If a line finishes early, stay quiet until the next shot.
+Plain English, no pidgin. Don't read it. Watch the video twice, then say it as if you are sitting in that car.
 
-## Script 1 (recommended): a woman's voice, as if she is the driver
+## Script (one person, talking non-stop)
 
-| Time | On screen | Voice-over | How to say it |
+> Ah ah, what is this one doing? Dim your light now! ... He can't even hear you. So put this on your visor. This side is for the sun ... and this side is for people like him. If you drive, tap and get it.
+
+| Time | On screen | Say | How |
 |---|---|---|---|
-| 0.4 to 1.6s | Dark road, a car is coming closer | "Why won't he dim his light?" | Annoyed |
-| 1.6 to 3.9s | She raises her hand, then loses the road | "I can't see! I can't see the road!" | Real panic, then stop |
-| 3.9 to 5.9s | Peeling the film off the new shields | "Nobody should drive like this." | Calm |
-| 5.9 to 7.7s | Opening the two shields and the clip | "Clip this on your visor." | Simple |
-| 7.7 to 9.3s | Bright sun, the grey shield comes down | "Grey for the sun." | Quick |
-| 9.3 to 11.9s | Full light, then the amber shield comes down at 10.3s | "Amber for full light... look now." | Say "look now" once the amber is down |
-| 11.9 to 14s | She folds it up and drives on, relaxed | "Tap and see it." | Relaxed |
+| 0 to 3.9s | The car comes closer, full light, she raises her hand and loses the road | "Ah ah, what is this one doing? Dim your light now!" | Start normal, get angry, shout the last part |
+| 3.9 to 7.7s | Peeling the film, then opening the shields and clip | "He can't even hear you. So put this on your visor." | Laugh a little, then calm |
+| 7.7 to 9.3s | Bright sun, the grey shield comes down | "This side is for the sun..." | Don't stop, keep going |
+| 9.3 to 11.9s | Full light, then the amber comes down at 10.3s | "...and this side is for people like him." | Say "people like him" as the amber lands |
+| 11.9 to 14s | She folds it up and drives on | "If you drive, tap and get it." | Easy, like advice |
 
-## Script 2: a narrator
+## A second opening to test (only the first 3.9 seconds change)
 
-| Time | On screen | Voice-over | How to say it |
-|---|---|---|---|
-| 0 to 1.6s | Dark road, a car is coming closer | "Don't blink. Watch that car." | Low and serious |
-| 1.6 to 3.9s | She raises her hand, then loses the road | "Look! She can't even see the road anymore!" | Alarmed |
-| 3.9 to 5.9s | Peeling the film off the new shields | "This is what she needed." | Calm |
-| 5.9 to 7.7s | Opening the two shields and the clip | "It clips onto your visor." | Simple |
-| 7.7 to 9.3s | Bright sun, the grey shield comes down | "Sun in your face? Grey." | Quick |
-| 9.3 to 11.9s | Full light, then the amber shield comes down at 10.3s | "Full light again... see the road now?" | Pause before "see" |
-| 11.9 to 14s | She folds it up and drives on, relaxed | "Tap to see how it works." | Relaxed |
+> You know those drivers that never dim their light? Look at this.
+
+Then continue from: "He won't even hear you. So put this on your visor."
 
 ## Ad copy (primary text, 64 words)
 

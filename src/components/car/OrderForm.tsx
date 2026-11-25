@@ -138,12 +138,16 @@ export function OrderForm() {
       return;
     }
     const w = window as unknown as { fbq?: (...args: unknown[]) => void };
-    w.fbq?.("track", "Lead", {
-      value: chosen.price,
-      currency: "NGN",
-      content_name: "DUSKWAY 2-in-1 Visor",
-      num_items: chosen.visors,
-    });
+    // Purchase, not Lead, by the owner's choice: ads optimise for buyers. Once per visit, so
+    // coming back from WhatsApp and pressing the button again doesn't count a second sale.
+    if (!sent) {
+      w.fbq?.("track", "Purchase", {
+        value: chosen.price,
+        currency: "NGN",
+        content_name: "DUSKWAY 2-in-1 Visor",
+        num_items: chosen.visors,
+      });
+    }
     setSent(true);
     const url = `https://wa.me/${CAR_ORDER_WHATSAPP}?text=${encodeURIComponent(buildOrderMessage(pkg, f))}`;
     window.location.assign(url);

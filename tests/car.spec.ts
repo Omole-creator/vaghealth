@@ -1,6 +1,11 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("/car (DUSKWAY visor)", () => {
+  // Never let a test order reach the live pixel: it would be recorded as a real sale.
+  test.beforeEach(async ({ context }) => {
+    await context.route(/facebook\.(net|com)/, (route) => route.abort());
+  });
+
   test("headline, videos, offer and form are visible", async ({ page }) => {
     await page.goto("/car");
     await expect(page.getByRole("heading", { level: 1, name: /new 2-in-1 shield clips onto your car visor/i })).toBeVisible();
@@ -86,6 +91,54 @@ test.describe("/car (DUSKWAY visor)", () => {
       last = at;
     }
     expect(text).toContain("\n\n");
+  });
+
+  test("Purchase fires once for a valid order, with the package price, and never for an invalid one", async ({ page }) => {
+    const events: [string, { value?: number; currency?: string }?][] = [];
+    await page.exposeFunction("recordFbq", (name: string, data?: { value?: number; currency?: string }) => {
+      events.push([name, data]);
+    });
+    // The pixel snippet leaves an existing window.fbq alone, so this stub receives every event.
+    await page.addInitScript(() => {
+      const w = window as unknown as Record<string, (...a: unknown[]) => void>;
+      w.fbq = (method, name, data) => {
+        if (method === "track") w.recordFbq(name, data);
+      };
+    });
+    let opened = 0;
+    // 204 keeps the page in place, like returning from WhatsApp.
+    await page.route("https://wa.me/**", (route) => {
+      opened += 1;
+      return route.fulfill({ status: 204 });
+    });
+    await page.goto("/car");
+    const purchases = () => events.filter(([name]) => name === "Purchase");
+
+    // Retried: in dev the first click can land before React has hydrated the button.
+    await expect(async () => {
+      await page.getByTestId("pick-3").click();
+      await expect(page.getByTestId("order-total")).toHaveText("₦35,000", { timeout: 1000 });
+    }).toPass();
+
+    await page.getByTestId("order-submit").click();
+    await expect(page.getByText(/valid Nigerian number/i)).toBeVisible();
+    expect(purchases()).toHaveLength(0);
+
+    await page.locator("#name").fill("Chinedu Okafor");
+    await page.locator("#whatsapp").fill("0803 123 4567");
+    await page.locator("#email").fill("chinedu@example.com");
+    await page.locator("#address").fill("12 Allen Avenue, Ikeja");
+    await page.locator("#state").selectOption("Lagos");
+    await page.locator("#confirm").check();
+    await page.getByTestId("order-submit").click();
+    await expect.poll(() => opened).toBe(1);
+    await page.getByTestId("order-submit").click();
+    await expect.poll(() => opened).toBe(2);
+
+    expect(purchases()).toHaveLength(1);
+    expect(purchases()[0][1]).toMatchObject({ value: 35000, currency: "NGN" });
+    expect(events.filter(([name]) => name === "PageView")).toHaveLength(1);
+    expect(events.filter(([name]) => name === "Lead")).toHaveLength(0);
   });
 
   test("no horizontal overflow at 375px", async ({ page }) => {

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState, type FormEvent } from "react";
-import { CAR_DELIVERY_PROMISE, CAR_ORDER_WHATSAPP } from "@/lib/config";
+import { CAR_DELIVERY_PROMISE, CAR_ORDER_WHATSAPP, WEB3FORMS_KEY } from "@/lib/config";
 import { deliveryTimes, naira, nigerianStates, packages, type PackageId } from "@/data/car";
 
 export const PICK_EVENT = "duskway:pick";
@@ -33,24 +33,23 @@ const NG_PHONE = /^(?:\+?234|0)[789][01]\d{8}$/;
 const cleanPhone = (v: string) => v.replace(/[\s\-()]/g, "");
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-/** The WhatsApp message, fields in form order, a blank line between each for readability. */
-export function buildOrderMessage(pkgId: PackageId, f: Fields) {
+/** The order as Web3Forms receives it. Key order is the order the fields show in the email. */
+export function buildOrderFields(pkgId: PackageId, f: Fields) {
   const pkg = packages.find((p) => p.id === pkgId)!;
-  const line = (label: string, value: string) => `*${label}:* ${value.trim() || "-"}`;
-  return [
-    "*NEW ORDER: DUSKWAY 2-in-1 Day & Night Visor*",
-    line("Package", `${pkg.title} (${pkg.visors} visor${pkg.visors > 1 ? "s" : ""})`),
-    line("Total", naira(pkg.price)),
-    line("Full name", f.name),
-    line("WhatsApp number", f.whatsapp),
-    line("Other phone number", f.phone2),
-    line("Email", f.email),
-    line("Delivery address", f.address),
-    line("State", f.state),
-    line("Best time to deliver", f.time),
-    line("Payment", "Pay on delivery"),
-    line("Delivery", "FREE"),
-  ].join("\n\n");
+  const v = (x: string) => x.trim() || "-";
+  return {
+    "Full name": v(f.name),
+    "WhatsApp number": v(f.whatsapp),
+    "Other phone number": v(f.phone2),
+    Email: v(f.email),
+    "Delivery address": v(f.address),
+    State: v(f.state),
+    Package: `${pkg.title} (${pkg.visors} visor${pkg.visors > 1 ? "s" : ""})`,
+    Total: naira(pkg.price),
+    "Best time to deliver": v(f.time),
+    Payment: "Pay on delivery",
+    Delivery: "FREE",
+  };
 }
 
 type Errors = Partial<Record<keyof Fields, string>>;
@@ -105,7 +104,10 @@ export function OrderForm() {
   const [pkg, setPkg] = useState<PackageId>("2");
   const [f, setF] = useState<Fields>(empty);
   const [errors, setErrors] = useState<Errors>({});
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "failed">("idle");
+  const [tracked, setTracked] = useState(false);
+  // Honeypot: hidden from people, bots fill it, Web3Forms then drops the submission.
+  const [botcheck, setBotcheck] = useState(false);
 
   // Bundle cards higher up the page pre-select a package here before scrolling down.
   useEffect(() => {
@@ -128,7 +130,7 @@ export function OrderForm() {
 
   const chosen = packages.find((p) => p.id === pkg)!;
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const found = validate(f);
     setErrors(found);
@@ -137,78 +139,67 @@ export function OrderForm() {
       document.getElementById(first)?.focus();
       return;
     }
-    const w = window as unknown as { fbq?: (...args: unknown[]) => void };
-    // Purchase, not Lead, by the owner's choice: ads optimise for buyers. Once per visit, so
-    // coming back from WhatsApp and pressing the button again doesn't count a second sale.
-    if (!sent) {
+    if (status === "sending") return;
+    setStatus("sending");
+    try {
+      const fields = buildOrderFields(pkg, f);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New DUSKWAY order: ${chosen.title}, ${f.state}`,
+          from_name: "DUSKWAY order form",
+          replyto: f.email.trim(),
+          botcheck: botcheck,
+          ...fields,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { success?: boolean };
+      if (!res.ok || !data.success) throw new Error("not saved");
+    } catch {
+      setStatus("failed");
+      return;
+    }
+    // Purchase, not Lead, by the owner's choice: ads optimise for buyers. Only after the order
+    // is saved, and once per visit, so a second order from the same visitor isn't a second sale.
+    if (!tracked) {
+      const w = window as unknown as { fbq?: (...args: unknown[]) => void };
       w.fbq?.("track", "Purchase", {
         value: chosen.price,
         currency: "NGN",
         content_name: "DUSKWAY 2-in-1 Visor",
         num_items: chosen.visors,
       });
+      setTracked(true);
     }
-    setSent(true);
-    const url = `https://wa.me/${CAR_ORDER_WHATSAPP}?text=${encodeURIComponent(buildOrderMessage(pkg, f))}`;
-    window.location.assign(url);
+    setStatus("done");
   };
+
+  if (status === "done") {
+    return (
+      <div data-testid="order-done" role="status" className="rounded-2xl border border-emerald-600/30 bg-emerald-50 p-6 text-center">
+        <p className="text-2xl font-extrabold text-dw-ink">Thank you, {f.name.trim().split(/\s+/)[0]}. Your order is in.</p>
+        <p className="mt-3 text-dw-ink/80">
+          We&apos;ll call or WhatsApp you on {f.whatsapp.trim()} to confirm, then deliver {CAR_DELIVERY_PROMISE}. You pay {naira(chosen.price)} when it
+          arrives.
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            setF(empty);
+            setStatus("idle");
+          }}
+          className="mt-5 text-sm font-semibold text-dw-blue underline underline-offset-4"
+        >
+          Place another order
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={onSubmit} noValidate data-testid="order-form" className="space-y-6">
-      {/* Package: adapted from 21st.dev "Choice Cards" (@felipemenezes098), as native radios */}
-      <fieldset>
-        <legend className="text-sm font-semibold text-dw-ink">Choose your package</legend>
-        <div className="mt-2 grid gap-3">
-          {packages.map((p) => {
-            const active = p.id === pkg;
-            return (
-              <label
-                key={p.id}
-                className={`relative flex cursor-pointer items-center gap-3 rounded-2xl border-2 bg-white p-3 pr-4 transition ${
-                  active ? "border-dw-blue shadow-[0_8px_24px_-8px_rgba(0,154,222,0.5)]" : "border-dw-ink/10 hover:border-dw-ink/25"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="package"
-                  value={p.id}
-                  checked={active}
-                  onChange={() => setPkg(p.id)}
-                  className="peer sr-only"
-                  data-testid={`package-${p.id}`}
-                />
-                <span
-                  aria-hidden="true"
-                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 peer-focus-visible:ring-4 peer-focus-visible:ring-dw-blue/30 ${
-                    active ? "border-dw-blue bg-dw-blue" : "border-dw-ink/25"
-                  }`}
-                >
-                  {active && <span className="h-2 w-2 rounded-full bg-white" />}
-                </span>
-                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-dw-paper">
-                  <Image src="/images/car/car9.webp" alt="" fill sizes="48px" className="object-contain p-1" />
-                  <span className="absolute bottom-0.5 right-0.5 rounded-md bg-dw-ink px-1 text-[10px] font-bold text-white">
-                    ×{p.visors}
-                  </span>
-                </span>
-                <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
-                  <span className="font-bold">{p.title}</span>
-                  {p.tag && (
-                    <span className="rounded-full bg-dw-amber px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-dw-ink">
-                      {p.tag}
-                    </span>
-                  )}
-                </span>
-                <span className="shrink-0 text-right">
-                  <span className="block text-lg font-extrabold tabular-nums">{naira(p.price)}</span>
-                  {p.was && <span className="block text-xs text-dw-ink/45 line-through tabular-nums">{naira(p.was)}</span>}
-                </span>
-              </label>
-            );
-          })}
-        </div>
-      </fieldset>
-
       <fieldset className="space-y-4">
         <legend className="mb-1 text-sm font-semibold text-dw-ink">Your details</legend>
         <Field label="Full name" name="name" error={errors.name}>
@@ -228,23 +219,74 @@ export function OrderForm() {
         <Field label="Delivery address" name="address" error={errors.address}>
           <input {...a11y("address")} autoComplete="street-address" className={input} value={f.address} onChange={(e) => set("address", e.target.value)} placeholder="House number, street and area" />
         </Field>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="State" name="state" error={errors.state}>
-            <select {...a11y("state")} className={input} value={f.state} onChange={(e) => set("state", e.target.value)}>
-              <option value="">Choose your state</option>
-              {nigerianStates.map((s) => (
-                <option key={s}>{s}</option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Best time to deliver" name="time">
-            <select {...a11y("time")} className={input} value={f.time} onChange={(e) => set("time", e.target.value)}>
-              {deliveryTimes.map((t) => (
-                <option key={t}>{t}</option>
-              ))}
-            </select>
-          </Field>
-        </div>
+        <Field label="State" name="state" error={errors.state}>
+          <select {...a11y("state")} className={input} value={f.state} onChange={(e) => set("state", e.target.value)}>
+            <option value="">Choose your state</option>
+            {nigerianStates.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+        </Field>
+        {/* Package: adapted from 21st.dev "Choice Cards" (@felipemenezes098), as native radios */}
+        <fieldset>
+          <legend className="text-sm font-semibold text-dw-ink">Choose your package</legend>
+          <div className="mt-2 grid gap-3">
+            {packages.map((p) => {
+              const active = p.id === pkg;
+              return (
+                <label
+                  key={p.id}
+                  className={`relative flex cursor-pointer items-center gap-3 rounded-2xl border-2 bg-white p-3 pr-4 transition ${
+                    active ? "border-dw-blue shadow-[0_8px_24px_-8px_rgba(0,154,222,0.5)]" : "border-dw-ink/10 hover:border-dw-ink/25"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="package"
+                    value={p.id}
+                    checked={active}
+                    onChange={() => setPkg(p.id)}
+                    className="peer sr-only"
+                    data-testid={`package-${p.id}`}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 peer-focus-visible:ring-4 peer-focus-visible:ring-dw-blue/30 ${
+                      active ? "border-dw-blue bg-dw-blue" : "border-dw-ink/25"
+                    }`}
+                  >
+                    {active && <span className="h-2 w-2 rounded-full bg-white" />}
+                  </span>
+                  <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-dw-paper">
+                    <Image src="/images/car/car9.webp" alt="" fill sizes="48px" className="object-contain p-1" />
+                    <span className="absolute bottom-0.5 right-0.5 rounded-md bg-dw-ink px-1 text-[10px] font-bold text-white">
+                      ×{p.visors}
+                    </span>
+                  </span>
+                  <span className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
+                    <span className="font-bold">{p.title}</span>
+                    {p.tag && (
+                      <span className="rounded-full bg-dw-amber px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-dw-ink">
+                        {p.tag}
+                      </span>
+                    )}
+                  </span>
+                  <span className="shrink-0 text-right">
+                    <span className="block text-lg font-extrabold tabular-nums">{naira(p.price)}</span>
+                    {p.was && <span className="block text-xs text-dw-ink/45 line-through tabular-nums">{naira(p.was)}</span>}
+                  </span>
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
+        <Field label="Best time to deliver" name="time">
+          <select {...a11y("time")} className={input} value={f.time} onChange={(e) => set("time", e.target.value)}>
+            {deliveryTimes.map((t) => (
+              <option key={t}>{t}</option>
+            ))}
+          </select>
+        </Field>
       </fieldset>
 
       <div className="rounded-2xl border border-dw-blue/25 bg-dw-blue/5 p-4">
@@ -280,17 +322,36 @@ export function OrderForm() {
         )}
       </div>
 
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+        checked={botcheck}
+        onChange={(e) => setBotcheck(e.target.checked)}
+      />
+
+      {status === "failed" && (
+        <p role="alert" data-testid="order-failed" className="rounded-xl bg-red-50 p-3 text-center text-sm font-medium text-red-700">
+          Your order didn&apos;t go through. Check your network and press the button again, or{" "}
+          <a className="underline" href={`https://wa.me/${CAR_ORDER_WHATSAPP}`}>
+            send it to us on WhatsApp
+          </a>
+          .
+        </p>
+      )}
+
       <button
         type="submit"
+        disabled={status === "sending"}
         data-testid="order-submit"
-        className="flex w-full items-center justify-center gap-2 rounded-full bg-dw-amber px-4 py-4 text-base font-extrabold sm:text-lg text-dw-ink shadow-[0_12px_30px_-8px_rgba(255,180,0,0.7)] transition hover:brightness-105 active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dw-blue"
+        className="flex w-full items-center justify-center gap-2 rounded-full bg-dw-amber px-4 py-4 text-base font-extrabold sm:text-lg text-dw-ink shadow-[0_12px_30px_-8px_rgba(255,180,0,0.7)] transition hover:brightness-105 active:scale-[0.99] disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dw-blue"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z" />
-        </svg>
-        {sent ? "Opening WhatsApp…" : "Send My Order On WhatsApp"}
+        {status === "sending" ? "Sending your order…" : "Place My Order"}
       </button>
-      <p className="text-center text-xs text-dw-ink/55">WhatsApp opens with your order already typed out. Just press send.</p>
+      <p className="text-center text-xs text-dw-ink/55">No payment now. You pay when the visor arrives.</p>
     </form>
   );
 }

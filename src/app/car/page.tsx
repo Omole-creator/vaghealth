@@ -4,7 +4,9 @@ import { RevealSection } from "@/components/RevealSection";
 import { AutoVideo } from "@/components/car/AutoVideo";
 import { OrderForm } from "@/components/car/OrderForm";
 import { BundleCards, PixelViewContent } from "@/components/car/CarClient";
-import { faqs, installSteps, OFFER_HEADING, SHOW_TESTIMONIALS, testimonials } from "@/data/car";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import { faqs, HERO_FACES, HERO_RATING_TEXT, installSteps, OFFER_HEADING, SHOW_TESTIMONIALS, testimonials } from "@/data/car";
 import { CAR_DELIVERY_PROMISE, CAR_WHATSAPP_DISPLAY, CAR_WHATSAPP_URL } from "@/lib/config";
 
 // Section order and wording follow CAR-SALES-COPY.md. Change copy there first.
@@ -40,6 +42,34 @@ const heroVideos = [
   { name: "day", caption: "In the day", label: "Harsh daylight through the windscreen, with and without the grey shield" },
 ] as const;
 
+// Avatar stack + five stars above the headline, after 21st.dev "Social proof avatars".
+// A face shows only once its photo exists; until then a plain dark circle holds its place.
+function RatingBadge() {
+  return (
+    <div data-testid="hero-rating" className="hero-in mt-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-3">
+      <div className="flex -space-x-2.5">
+        {HERO_FACES.map((src) =>
+          existsSync(path.join(process.cwd(), "public", src)) ? (
+            <Image key={src} src={src} alt="" width={40} height={40} className="h-10 w-10 rounded-full object-cover ring-2 ring-dw-ink" />
+          ) : (
+            <span key={src} aria-hidden="true" className="h-10 w-10 rounded-full bg-gradient-to-br from-[#8a5a3c] to-[#3d2416] ring-2 ring-dw-ink" />
+          ),
+        )}
+      </div>
+      <div className="flex flex-col items-center sm:items-start">
+        <span className="flex text-dw-amber" aria-label="5 out of 5 stars">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z" />
+            </svg>
+          ))}
+        </span>
+        <p className="text-sm font-medium text-white/80">{HERO_RATING_TEXT}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function CarPage() {
   return (
     <main className="overflow-x-clip">
@@ -54,6 +84,7 @@ export default function CarPage() {
             </p>
             <p className="rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-white/85">Pay on delivery</p>
           </div>
+          <RatingBadge />
           <h1 className="hero-in mt-6 text-[28px] font-extrabold leading-[1.1] tracking-[-0.03em] sm:text-[44px]">
             New 2-In-1 Shield Clips Onto Your Car Visor In Seconds And Softens Full Light At Night And Harsh Sun By Day
           </h1>

@@ -38,6 +38,11 @@ export const installSteps = [
 export const TESTIMONIALS_ARE_REAL = false;
 export const SHOW_TESTIMONIALS = TESTIMONIALS_ARE_REAL || process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview";
 
+// Hero rating badge. Live for everyone by the owner's choice (unlike the written reviews, which stay
+// behind SHOW_TESTIMONIALS). Faces: public/images/car/faces/1.webp ... 5.webp, 120px square crops.
+export const HERO_RATING_TEXT = "Rated 5 stars by drivers across Nigeria";
+export const HERO_FACES = [1, 2, 3, 4, 5].map((n) => `/images/car/faces/${n}.webp`);
+
 export const testimonials = [
   {
     quote:

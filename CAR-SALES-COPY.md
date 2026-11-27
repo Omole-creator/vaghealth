@@ -13,6 +13,12 @@ Source of truth for the wording on `/car`. Change copy here first, then mirror i
 - **Claims:** "softens" and "cuts". Never "stops all glare", "night vision", "polarized" or "100% UV".
 - **Price:** 15,000 / 25,000 / 35,000 for 3 + 1 free. No crossed-out 25,000 (it was never the price). Black Friday is carried by the bundles, with no deadline. Never mention other shops or AliExpress.
 
+## RATING BADGE (above the headline)
+
+`[5 round faces]` ★★★★★ Rated 5 stars by drivers across Nigeria
+
+Live for everyone (the owner's choice), unlike the written reviews.
+
 ## HEADLINE (chosen by the owner)
 
 New 2-In-1 Shield Clips Onto Your Car Visor In Seconds And Softens Full Light At Night And Harsh Sun By Day
@@ -97,7 +103,11 @@ Or you can clip this on in seconds, and give your eyes a fighting chance.
 
 Fill This Form To Order. You Pay When It Arrives.
 
-Package, full name, WhatsApp number, other phone (optional), email, delivery address, state, best time to deliver, availability tick.
+Full name, WhatsApp number, other phone (optional), email, delivery address, state, package, best time to deliver, availability tick.
+
+`[BUTTON: Place My Order]` No payment now. You pay when the visor arrives.
+
+After sending: "Thank you, {first name}. Your order is in. We'll call or WhatsApp you on {number} to confirm, then deliver within 24 hours. You pay {total} when it arrives."
 
 ## FAQ
 

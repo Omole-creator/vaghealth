@@ -36,64 +36,102 @@ test.describe("/car (DUSKWAY visor)", () => {
     }
   });
 
-  test("invalid form does not open WhatsApp", async ({ page }) => {
-    let opened = false;
-    await page.route("https://wa.me/**", (route) => {
-      opened = true;
-      return route.fulfill({ body: "ok" });
-    });
-    await page.goto("/car");
-    await page.getByTestId("order-submit").click();
-    await expect(page.getByText(/valid Nigerian number/i)).toBeVisible();
-    expect(opened).toBe(false);
-  });
+  const FORM_API = "https://api.web3forms.com/submit";
 
-  test("valid form opens WhatsApp with every field, in order, spaced out", async ({ page }) => {
-    let sentUrl = "";
-    await page.route("https://wa.me/**", (route) => {
-      sentUrl = route.request().url();
-      return route.fulfill({ body: "ok" });
-    });
-    await page.goto("/car");
-
+  async function fillValidOrder(page: import("@playwright/test").Page) {
     // Retried: in dev the first click can land before React has hydrated the button.
     await expect(async () => {
       await page.getByTestId("pick-3").click();
       await expect(page.getByTestId("order-total")).toHaveText("₦35,000", { timeout: 1000 });
     }).toPass();
-
     await page.locator("#name").fill("Chinedu Okafor");
     await page.locator("#whatsapp").fill("0803 123 4567");
     await page.locator("#email").fill("chinedu@example.com");
     await page.locator("#address").fill("12 Allen Avenue, Ikeja");
     await page.locator("#state").selectOption("Lagos");
     await page.locator("#confirm").check();
-    await page.getByTestId("order-submit").click();
+  }
 
-    await expect.poll(() => sentUrl).toContain("wa.me/2349048744395");
-    const text = new URL(sentUrl).searchParams.get("text")!;
-    const order = [
-      "Package:* 3 Visors + 1 FREE (4 visors)",
-      "Total:* ₦35,000",
-      "Full name:* Chinedu Okafor",
-      "WhatsApp number:* 0803 123 4567",
-      "Email:* chinedu@example.com",
-      "Delivery address:* 12 Allen Avenue, Ikeja",
-      "State:* Lagos",
-      "Best time to deliver:* Any time",
-      "Payment:* Pay on delivery",
-      "Delivery:* FREE",
-    ];
-    let last = -1;
-    for (const part of order) {
-      const at = text.indexOf(part);
-      expect(at, part).toBeGreaterThan(last);
-      last = at;
-    }
-    expect(text).toContain("\n\n");
+  test("package sits between state and best time to deliver", async ({ page }) => {
+    await page.goto("/car");
+    const form = page.getByTestId("order-form");
+    const y = async (sel: string) => (await form.locator(sel).first().boundingBox())!.y;
+    const state = await y("#state");
+    const pkg = await y('[data-testid="package-1"] >> xpath=..');
+    const time = await y("#time");
+    expect(state).toBeLessThan(pkg);
+    expect(pkg).toBeLessThan(time);
   });
 
-  test("Purchase fires once for a valid order, with the package price, and never for an invalid one", async ({ page }) => {
+  test("invalid form is not sent", async ({ page }) => {
+    let sent = false;
+    await page.route(FORM_API, (route) => {
+      sent = true;
+      return route.fulfill({ json: { success: true } });
+    });
+    await page.goto("/car");
+    await page.getByTestId("order-submit").click();
+    await expect(page.getByText(/valid Nigerian number/i)).toBeVisible();
+    expect(sent).toBe(false);
+  });
+
+  test("valid form posts every field to Web3Forms, in form order, and never opens WhatsApp", async ({ page }) => {
+    let body: Record<string, unknown> = {};
+    let whatsapp = false;
+    await page.route(FORM_API, (route) => {
+      body = route.request().postDataJSON();
+      return route.fulfill({ json: { success: true } });
+    });
+    await page.route("https://wa.me/**", (route) => {
+      whatsapp = true;
+      return route.fulfill({ body: "ok" });
+    });
+    await page.goto("/car");
+    await fillValidOrder(page);
+    await page.getByTestId("order-submit").click();
+
+    await expect(page.getByTestId("order-done")).toContainText("Thank you, Chinedu");
+    expect(body.access_key).toBeTruthy();
+    const order: [string, string][] = [
+      ["Full name", "Chinedu Okafor"],
+      ["WhatsApp number", "0803 123 4567"],
+      ["Email", "chinedu@example.com"],
+      ["Delivery address", "12 Allen Avenue, Ikeja"],
+      ["State", "Lagos"],
+      ["Package", "3 Visors + 1 FREE (4 visors)"],
+      ["Total", "₦35,000"],
+      ["Best time to deliver", "Any time"],
+      ["Payment", "Pay on delivery"],
+      ["Delivery", "FREE"],
+    ];
+    const keys = Object.keys(body);
+    let last = -1;
+    for (const [k, v] of order) {
+      expect(body[k], k).toBe(v);
+      expect(keys.indexOf(k), k).toBeGreaterThan(last);
+      last = keys.indexOf(k);
+    }
+    expect(whatsapp).toBe(false);
+  });
+
+  test("a failed submission shows an error and no Purchase", async ({ page }) => {
+    const events: string[] = [];
+    await page.exposeFunction("recordFbq", (name: string) => events.push(name));
+    await page.addInitScript(() => {
+      const w = window as unknown as Record<string, (...a: unknown[]) => void>;
+      w.fbq = (method, name) => {
+        if (method === "track") w.recordFbq(name);
+      };
+    });
+    await page.route(FORM_API, (route) => route.fulfill({ status: 500, json: { success: false } }));
+    await page.goto("/car");
+    await fillValidOrder(page);
+    await page.getByTestId("order-submit").click();
+    await expect(page.getByTestId("order-failed")).toBeVisible();
+    expect(events).not.toContain("Purchase");
+  });
+
+  test("Purchase fires once per visit, after the order is saved, with the package price", async ({ page }) => {
     const events: [string, { value?: number; currency?: string }?][] = [];
     await page.exposeFunction("recordFbq", (name: string, data?: { value?: number; currency?: string }) => {
       events.push([name, data]);
@@ -105,40 +143,40 @@ test.describe("/car (DUSKWAY visor)", () => {
         if (method === "track") w.recordFbq(name, data);
       };
     });
-    let opened = 0;
-    // 204 keeps the page in place, like returning from WhatsApp.
-    await page.route("https://wa.me/**", (route) => {
-      opened += 1;
-      return route.fulfill({ status: 204 });
+    let posted = 0;
+    await page.route(FORM_API, (route) => {
+      posted += 1;
+      return route.fulfill({ json: { success: true } });
     });
     await page.goto("/car");
     const purchases = () => events.filter(([name]) => name === "Purchase");
-
-    // Retried: in dev the first click can land before React has hydrated the button.
-    await expect(async () => {
-      await page.getByTestId("pick-3").click();
-      await expect(page.getByTestId("order-total")).toHaveText("₦35,000", { timeout: 1000 });
-    }).toPass();
 
     await page.getByTestId("order-submit").click();
     await expect(page.getByText(/valid Nigerian number/i)).toBeVisible();
     expect(purchases()).toHaveLength(0);
 
-    await page.locator("#name").fill("Chinedu Okafor");
-    await page.locator("#whatsapp").fill("0803 123 4567");
-    await page.locator("#email").fill("chinedu@example.com");
-    await page.locator("#address").fill("12 Allen Avenue, Ikeja");
-    await page.locator("#state").selectOption("Lagos");
-    await page.locator("#confirm").check();
+    await fillValidOrder(page);
     await page.getByTestId("order-submit").click();
-    await expect.poll(() => opened).toBe(1);
+    await expect(page.getByTestId("order-done")).toBeVisible();
+    await page.getByRole("button", { name: "Place another order" }).click();
+    await fillValidOrder(page);
     await page.getByTestId("order-submit").click();
-    await expect.poll(() => opened).toBe(2);
+    await expect(page.getByTestId("order-done")).toBeVisible();
 
+    expect(posted).toBe(2);
     expect(purchases()).toHaveLength(1);
     expect(purchases()[0][1]).toMatchObject({ value: 35000, currency: "NGN" });
     expect(events.filter(([name]) => name === "PageView")).toHaveLength(1);
     expect(events.filter(([name]) => name === "Lead")).toHaveLength(0);
+  });
+
+  test("hero shows the five-star badge and five faces above the headline", async ({ page }) => {
+    await page.goto("/car");
+    const badge = page.getByTestId("hero-rating");
+    await expect(badge.getByLabel("5 out of 5 stars")).toBeVisible();
+    await expect(badge.locator("img")).toHaveCount(5);
+    const h1 = page.getByRole("heading", { level: 1 });
+    expect((await badge.boundingBox())!.y).toBeLessThan((await h1.boundingBox())!.y);
   });
 
   test("no horizontal overflow at 375px", async ({ page }) => {
